@@ -36,7 +36,8 @@
 		</script>
 		<style type="text/css">
 			.img2 {
-    width: 80%;
+				margin-top: 15px;
+    width: 40%;
     border: 0;
 }
 			
@@ -55,10 +56,23 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+.flex-item2 {
+  margin:1em;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 
 .flex-container .flex-item:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
+.flex-container .flex-item2:hover {
+	background-color: #fdde00;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
 
 #main_content_inner h3 {
   font-size: 2rem;
@@ -73,42 +87,6 @@
 .tab1cards {
   display: flex;
   flex-direction: row;
-}
-.hexagon {
-  width: 120px;
-  height: 70px;
-  position: relative;
-  background-color: #ffcc00;
-  margin: 50px auto 0;
-  
-}
-
-.hexagon:before, .hexagon:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 60px solid transparent;
-  border-right: 60px solid transparent;
-}
-
-.hexagon:before {
-  bottom: 100%;
-  border-bottom: 35px solid #ffcc00;
-}
-
-.hexagon:after {
-  top: 100%;
-  width: 0;
-  border-top: 35px solid #ffcc00;
-}
-
-.text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 20px;
 }
 	
 #element1 {
@@ -229,12 +207,12 @@ ga('send', 'pageview');
 <li id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-82 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-87"><a href="index.html">Our Services</a>
 <ul class="sub-menu">
 	<li id="menu-item-94" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-94"><a rel="m_PageScroll2id" href="index.html#design">Design</a></li>
+	<li id="menu-item-98" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-98"><a rel="m_PageScroll2id" href="index.html#Approvals">Approvals</a></li>
+	<li id="menu-item-98" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-98"><a rel="m_PageScroll2id" href="index.html#Project">Project Management</a></li>
 	<li id="menu-item-95" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-95"><a rel="m_PageScroll2id" href="index.html#fit-out">Fit-out</a></li>
 	<li id="menu-item-96" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-96"><a rel="m_PageScroll2id" href="index.html#mep">MEP</a></li>
 	<li id="menu-item-97" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-97"><a rel="m_PageScroll2id" href="index.html#maintenance">Maintenance</a></li>
 	<li id="menu-item-98" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-98"><a rel="m_PageScroll2id" href="index.html#our-process">Our Process</a></li>
-	<li id="menu-item-98" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-98"><a rel="m_PageScroll2id" href="index.html#Approvals">Approvals</a></li>
-	<li id="menu-item-98" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-98"><a rel="m_PageScroll2id" href="index.html#Project">Project Management</a></li>
 </ul>
 </li>
 <li id="menu-item-88" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-88"><a href="../our-work/index.html">Our Work</a>
@@ -390,9 +368,79 @@ ga('send', 'pageview');
 
 
 			<style type="text/css">
+				.text1{
+					color: black;
+					text-decoration: none;
+				}
+				.text1:hover{
+					text-decoration: none;
+					color: black;
+				}
 	#rev_slider_1_1_wrapper .tp-loader.spinner3 div { background-color: #FFFFFF !important; }
 </style>
-</div><!-- END REVOLUTION SLIDER --><div id="main-content"><div class="services-container">
+
+</div><!-- END REVOLUTION SLIDER --><div id="main-content">
+
+	<div class="container">
+		<ul class="flex-container">
+			<li class="flex-item2">
+			  <a class="text1" rel="m_PageScroll2id" href="#design">
+				<img class="img2" src="icons/design.png" width="10%" alt="random image name"
+			  />
+			  <h3>Design</h3>
+			</a>
+			</li>
+			<li class="flex-item2">
+			  <a class="text1" rel="m_PageScroll2id" href="#Approvals"
+				><img class="img2" src="icons/approvals.png" alt="random image name"
+			  />
+			  <h3>Approvals</h3>
+			</a>
+			</li>
+			<li class="flex-item2">
+			  <a class="text1" rel="m_PageScroll2id" href="#Project"
+				><img class="img2" src="icons/project.png" alt="random image name"
+			  />
+			  <h3>Project Management</h3>
+			</a>
+			</li>
+			<li class="flex-item2">
+				<a class="text1" rel="m_PageScroll2id" href="#fit-out"
+				  ><img class="img2" src="icons/fitout.png" alt="random image name"
+				/>
+				<h3>Fit-out</h3>
+			</a>
+			  </li>
+			<li class="flex-item2">
+				<a class="text1" rel="m_PageScroll2id" href="#mep">
+					<img class="img2" src="icons/mep.png" alt="random image name"
+				/>
+				<h3>MEP</h3>
+			</a>
+			  </li>
+			<li class="flex-item2">
+			  <a class="text1" rel="m_PageScroll2id" href="#maintenance"
+				><img class="img2" src="icons/maintenance.png" width="30%" alt="random image name"
+			  />
+			  <h3>Maintenance</h3>
+			</a>
+			</li>
+			<li class="flex-item2">
+			  <a class="text1" rel="m_PageScroll2id" href="#our-process"
+				><img class="img2" src="icons/process.png" alt="random image name"
+			  />
+			  <h3>Our Process</h3>
+			</a>
+			</li>
+		
+		  </ul>
+		  </div>
+	
+	
+	<div class="services-container">
+
+
+
 <section id="design" class="color-white services" style="background-image:url(../wp-content/uploads/design-featured-slide.jpg); width:100%;  padding: 70px 15%;
 min-height: 240px;
 min-height: 369px;" >
@@ -402,96 +450,9 @@ min-height: 369px;" >
 		<div><p>With a practical design philosophy, we actualize ideas that translate into functional and beautiful spaces. Our in-house team of designers, CAD Technicians and 3D Visualizers are trained to work closely with clients and internal teams to identify design solutions that match our clients’ aesthetics and budgets.</p><p>Each design project begins with the initial Concept Phase. During this phase we identify the exact needs of the client, the budget and the envisioned outcome.</p><p>Once we visualize each concept through mood boards, sketches and 3D renderings, every detail of the design is presented to the client.</p><p>Our goal for every project is to deliver efficient, long-lasting design solutions that are sustainable and flexible to new design trends, and that are pocket-friendly.</p></div>		</div>
 		</article>
 </section>
-<br><br>
-<section id="fit-out" class="services" style="width:100%; 
-">
-		<article>
-		<h2 class="main-heading">FIT-OUT</h2>
-		<div class="text-slider">
-		<div>
-<b>Our Fit-out Services include:</b>
-<ul><li>Partitions</li>
-<li>Decoration</li>
-<li>Flooring</li>
-<li>Furniture</li>
-<li>Kitchen, Breakout & Washrooms</li>
-<li>Gypsum Work</li>
-<li>Wall Finishes</li>
-<li>Burglar Alarm System</li>
-<li>Tile Works</li>
-<li>Ceilings</li>
-<li><b>And More.</b></li>
-</ul>
-</div><div><p>When recreating and redesigning spaces, it is important to take time to understand the purpose of the fit-out or refurbishment project.</p>
-<p>More comfortable spaces? 
-A themed design aesthetic? 
-Or simply an updated look to outdated interiors?</p><p>The goal of any fit-out determines the plan of action for our Fit-out team. However, a constant across every project – every space we reimagine is creative and practical. A functional distribution of spaces that makes each space organized and clutter-free – whether at home, at work or at in a luxury hotel.</p><p>To make this process easy for our clients, we assign a Project Manager who ensures a successful project from conception to completion – in the given time, and budget.</p></div>		</div>
-		</article>
-</section>
-</div>
-<div class="services-container">
-<section id="maintenance" class="services" style="width:100%;
-">
-		<article>
-		<h2 class="main-heading">Maintenance</h2>
-		<div class="text-slider">
-		<div>
-<p><b>Indoor &amp; Outdoor</b>
-<ul>
-	<li>Renovation &amp; Interior Fittings</li>
-	<li>Landscaping</li>
-	<li>Tiling Works (Floor, Wall, Carpet)</li>
-	<li>Handyman Services</li>
-	<li>Glass Works</li>
-	<li>Carpentry Services</li>
-	<li>Painting &amp; Color Repair</li>
-	<li>Plumbing Works</li>
-	<li>False Ceiling &amp; Partition</li>
-	<li>Building Cleaning Services</li>
-	<li>Swimming Pool Repair &amp; Maintenance</li>
-</ul></p>
-</div>
-<div><p><b>Mechanical &amp; Electrical</b>A/C Installation &amp; Maintenance
-Electrical Setup and Fault Repair
-Electrical Works
-High/ Low Voltage Maintenance</p>
-<p><b>Annual Maintenance Packages</b>
-We undertake annual maintenance contracts and provide discounted packages according to various customer requirements.</p></div>		</div>
-		</article>
-</section>
-<section id="mep" class="color-white services" style="background-image:url(../wp-content/uploads/mep-featured-slide.jpg); width:100%;  padding: 70px 15%;
-min-height: 240px;
-min-height: 369px;">
-		<article>
-		<h2 class="main-heading">MEP</h2>
-		<div>
-		<div><p>Chase Interiors delivers a range of MEP services through an in-house Electro Mechanical Division that works in collaboration with the Fit-out team.</p>
-<p>Together, these teams guarantee a complete working network of basic requirements that improve the overall operations of the project.</p>
-<p>
-<b>Our MEP Services include:</b>
-<ul><li>Electrical, Plumbing & Drainage Works</li>
-<li>DB Dressing</li>
-<li>Specialized Lighting</li>
-<li>Security & Fire Systems</li>
-<li>Air Conditioning & Ducting</li></ul>
-</p>
-</div>		</div>
-		</article>
-</section>
-</div>
 
-<section id="our-process" class="bg-light-gray" style="width:100%;">
-	<div class="container">
-		<article>
-		<h2 class="main-heading">Our Process</h2>
-		<div class="col-sm-12">
-		To develop an organized approach to work, at Chase Interiors, we understand the importance of a system that explains the process for all projects – from start to finish. Consistency, clarity and collaboration are the products of that system, which allow tracking performance gaps, should there be any – all the while creating a work pattern that every member of the team is familiar with. 		</div>
-		</article>
-	</div>
-
-</section>
 <!--------------Approvals---------------------->
-<br>
+<br><br>
 <div class="container">
 	<h2 id="Approvals" class="main-heading">Approvals</h2>
 <ul class="flex-container">
@@ -595,7 +556,7 @@ min-height: 369px;">
 
 
 <section class="color-white services" style="background-image:url(../wp-content/uploads/design-featured-slide.jpg); width:100%;  padding: 70px 15%;
-min-height: 690px;" >
+min-height: 300px;" >
 		<article>
 		<div class="col-sm-12" style=" position: relative;
 		min-height: 137px;
@@ -649,16 +610,81 @@ min-height: 690px;" >
 
 
 
-
 <!-----------Project Management------------------->
 
 
 <section id="Project" class="color-white services" style="background-image:url(in2.jpg); width:100%;" >
-	<img class="img-responsive" src="project.png">
 
 	<div class="container">
-		<article>
-			<h2 class="main-heading">Project Management</h2>
+		<h2 class="main-heading">Project Management</h2>
+
+		<ul class="flex-container">
+
+			<li class="flex-item2">
+				<img class="img2" src="icons/design.png" width="10%" alt="random image name"
+			  />
+			  <h3>INCEPTION</h3>
+			  <p style="padding: 10px;">Site Consultation
+				Client Brief
+				Fitout Process
+				Scope of Works</p>
+			
+			</li>
+			<li class="flex-item2">
+				<img class="img2" src="icons/approvals.png" alt="random image name"
+			  />
+			  <h3>DESIGN</h3>
+			  <p style="padding: 10px;">
+				Concept Design
+Design Approval
+Cost Approval
+Fitout Program
+			</p>
+			</li>
+			<li class="flex-item2">
+				<img class="img2" src="icons/project.png" alt="random image name"
+			  />
+			  <h3>PRE FITOUT</h3>
+			  <p style="padding: 10px;">
+				Detailed Drawing
+Finishes
+Technical Drawing
+Authority
+Approvals
+			</p>
+			</li>
+			<li class="flex-item2">
+				  <img class="img2" src="icons/fitout.png" alt="random image name"
+				/>
+				<h3>FITOUT</h3>
+				<p style="padding: 10px;">
+					Coordinate Activity
+Progress Tracking
+Payment Reviews
+QAQC Checks
+				</p>
+			</a>
+			  </li>
+			<li class="flex-item2">
+					<img class="img2" src="icons/mep.png" alt="random image name"
+				/>
+				<h3>POST FITOUT</h3>
+				<p style="padding: 10px;">Final Inspection
+					Closeout Formalities
+					As Built & other
+					Documentation
+					Records &
+					Certificates
+				</p>
+			  </li>
+			
+			
+		
+		  </ul>
+		  </div>
+	<div class="container">
+		<article style="min-height: 309px;
+		">
 		<div class="col-sm-12" style=" position: relative;
 		min-height: 137px;
 		padding-left: 15px;
@@ -688,10 +714,104 @@ min-height: 690px;" >
 			<li>We will oversee your entire project as a trusted partner.</li>
 	  </ul>
 </div>
-
-
-
 	</div>
+		</article>
+	</div>
+</section>
+
+<!--------------FITOUT----------------------------------->
+<section id="fit-out" class="services" style="width:100%; 
+">
+		<article>
+		<h2 class="main-heading">FIT-OUT</h2>
+		<div class="text-slider">
+		<div>
+<b>Our Fit-out Services include:</b>
+<ul><li>Partitions</li>
+<li>Decoration</li>
+<li>Flooring</li>
+<li>Furniture</li>
+<li>Kitchen, Breakout & Washrooms</li>
+<li>Gypsum Work</li>
+<li>Wall Finishes</li>
+<li>Burglar Alarm System</li>
+<li>Tile Works</li>
+<li>Ceilings</li>
+<li><b>And More.</b></li>
+</ul>
+</div><div><p>When recreating and redesigning spaces, it is important to take time to understand the purpose of the fit-out or refurbishment project.</p>
+<p>More comfortable spaces? 
+A themed design aesthetic? 
+Or simply an updated look to outdated interiors?</p><p>The goal of any fit-out determines the plan of action for our Fit-out team. However, a constant across every project – every space we reimagine is creative and practical. A functional distribution of spaces that makes each space organized and clutter-free – whether at home, at work or at in a luxury hotel.</p><p>To make this process easy for our clients, we assign a Project Manager who ensures a successful project from conception to completion – in the given time, and budget.</p></div>		</div>
+		</article>
+</section>
+</div>
+
+
+	<!----------------------MEP--------------------------------------->
+	<section id="mep" class="color-white services" style="background-image:url(../wp-content/uploads/mep-featured-slide.jpg); width:100%;  padding: 70px 15%;
+	min-height: 240px;
+	min-height: 369px;">
+			<article>
+			<h2 class="main-heading">MEP</h2>
+			<div>
+			<div><p>Chase Interiors delivers a range of MEP services through an in-house Electro Mechanical Division that works in collaboration with the Fit-out team.</p>
+	<p>Together, these teams guarantee a complete working network of basic requirements that improve the overall operations of the project.</p>
+	<p>
+	<b>Our MEP Services include:</b>
+	<ul><li>Electrical, Plumbing & Drainage Works</li>
+	<li>DB Dressing</li>
+	<li>Specialized Lighting</li>
+	<li>Security & Fire Systems</li>
+	<li>Air Conditioning & Ducting</li></ul>
+	</p>
+	</div>		</div>
+			</article>
+	</section>
+	</div>
+
+
+<!------------------MAINTENANCE------------------------------->
+<div class="services-container">
+	<section id="maintenance" class="services" style="width:100%;
+	">
+			<article>
+			<h2 class="main-heading">Maintenance</h2>
+			<div class="text-slider">
+			<div>
+	<p><b>Indoor &amp; Outdoor</b>
+	<ul>
+		<li>Renovation &amp; Interior Fittings</li>
+		<li>Landscaping</li>
+		<li>Tiling Works (Floor, Wall, Carpet)</li>
+		<li>Handyman Services</li>
+		<li>Glass Works</li>
+		<li>Carpentry Services</li>
+		<li>Painting &amp; Color Repair</li>
+		<li>Plumbing Works</li>
+		<li>False Ceiling &amp; Partition</li>
+		<li>Building Cleaning Services</li>
+		<li>Swimming Pool Repair &amp; Maintenance</li>
+	</ul></p>
+	</div>
+	<div><p><b>Mechanical &amp; Electrical</b>A/C Installation &amp; Maintenance
+	Electrical Setup and Fault Repair
+	Electrical Works
+	High/ Low Voltage Maintenance</p>
+	<p><b>Annual Maintenance Packages</b>
+	We undertake annual maintenance contracts and provide discounted packages according to various customer requirements.</p></div>		</div>
+			</article>
+	</section>
+	
+
+
+<!--------------------OUR PROCESS------------------------------------------>
+<section id="our-process" class="bg-light-gray" style="width:100%;">
+	<div class="container">
+		<article>
+		<h2 class="main-heading">Our Process</h2>
+		<div class="col-sm-12">
+		To develop an organized approach to work, at Chase Interiors, we understand the importance of a system that explains the process for all projects – from start to finish. Consistency, clarity and collaboration are the products of that system, which allow tracking performance gaps, should there be any – all the while creating a work pattern that every member of the team is familiar with. 		</div>
 		</article>
 	</div>
 
