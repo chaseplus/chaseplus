@@ -58,6 +58,7 @@
 }
 .flex-item2 {
   margin:1em;
+  z-index: 110;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -78,10 +79,29 @@
   font-size: 2rem;
 }
 
+.lvm{
+	z-index: 111;
+		justify-content: center;
+		margin-top: -150px;
+}
+
 @media all and (max-width: 500px) {
-  .flex-container {
-    flex-direction: column;
+	.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* adjust as needed */
+}
+
+.flex-item2 {
+  width: calc(60% - 70px); /* adjust as needed */
+  margin-bottom: 20px; 
+
+}
+
+  .lvm{
+	margin-top: 0px;
   }
+
 }
 
 .tab1cards {
@@ -393,50 +413,51 @@ ga('send', 'pageview');
 </div><!-- END REVOLUTION SLIDER --><div id="main-content">
 
 	<div class="container">
-		<ul class="flex-container">
-			<li class="flex-item2">
+		<ul class="flex-container lvm" style="
+		">
+			<li class="flex-item2" style="background-color: white; ">
 			  <a class="text1" rel="m_PageScroll2id" href="#design">
 				<img class="img2" src="icons/design.png" width="10%" alt="random image name"
 			  />
 			  <h3>Design</h3>
 			</a>
 			</li>
-			<li class="flex-item2">
+			<li class="flex-item2" style="background-color: white;">
 			  <a class="text1" rel="m_PageScroll2id" href="#Approvals"
 				><img class="img2" src="icons/approvals.png" alt="random image name"
 			  />
 			  <h3>Approvals</h3>
 			</a>
 			</li>
-			<li class="flex-item2">
+			<li class="flex-item2" style="background-color: white;">
 			  <a class="text1" rel="m_PageScroll2id" href="#Project"
 				><img class="img2" src="icons/project.png" alt="random image name"
 			  />
 			  <h3>Project Management</h3>
 			</a>
 			</li>
-			<li class="flex-item2">
+			<li class="flex-item2" style="background-color: white;">
 				<a class="text1" rel="m_PageScroll2id" href="#fit-out"
 				  ><img class="img2" src="icons/fitout.png" alt="random image name"
 				/>
 				<h3>Fit-out</h3>
 			</a>
 			  </li>
-			<li class="flex-item2">
+			<li class="flex-item2" style="background-color: white;">
 				<a class="text1" rel="m_PageScroll2id" href="#mep">
 					<img class="img2" src="icons/mep.png" alt="random image name"
 				/>
 				<h3>MEP</h3>
 			</a>
 			  </li>
-			<li class="flex-item2">
+			<li class="flex-item2" style="background-color: white;">
 			  <a class="text1" rel="m_PageScroll2id" href="#maintenance"
 				><img class="img2" src="icons/maintenance.png" width="30%" alt="random image name"
 			  />
 			  <h3>Maintenance</h3>
 			</a>
 			</li>
-			<li class="flex-item2">
+			<li class="flex-item2" style="background-color: white;">
 			  <a class="text1" rel="m_PageScroll2id" href="#our-process"
 				><img class="img2" src="icons/process.png" alt="random image name"
 			  />
@@ -582,6 +603,16 @@ min-height: 300px;" >
 				<li>Retail Shop/Showroom</li>
 				<li>Salon/Gym</li>
 			  </ul>
+			  <br>
+			  <b><h3 style="font-weight: 800;">Other Approvals</h3></b>
+			<ul>
+				<li>Dubai Municipality
+					Food Control Approval </li>
+				<li>Dubai Health and Safety Approval</li>
+				<li>Dubai Health Authority Approval</li>
+				<li>Out Door Sitting Approval</li>
+				<li>Machinery Installation Approval</li>
+			  </ul>
 </div>
 <div class="col-sm-4 vision"><img src="wp-content/uploads/2015/05/glasses.png" alt="" />
 	<b><h3 style="font-weight: 800;">Industrial Projects
@@ -603,18 +634,7 @@ min-height: 300px;" >
 	</div>
 <br>
 
-<div class="col-sm-4 value"><img src="wp-content/uploads/2015/05/thumb.png" alt="" />
-	<b><h3 style="font-weight: 800;">Other Approvals</h3></b>
-			<ul>
-				<li>Dubai Municipality
-					Food Control Approval </li>
-				<li>Dubai Health and Safety Approval</li>
-				<li>Dubai Health Authority Approval</li>
-				<li>Out Door Sitting Approval</li>
-				<li>Machinery Installation Approval</li>
-			  </ul>
-
-</div>		</div>
+	</div>
 		</article>
 	</div>
 </section>
@@ -731,12 +751,14 @@ QAQC Checks
 </section>
 
 <!--------------FITOUT----------------------------------->
-<section id="fit-out" class="services" style="width:100%; 
+<section id="fit-out" class="services" style=" width:100%;  padding: 70px 15%;
+min-height: 240px;
+min-height: 369px;
 ">
 		<article>
 		<h2 class="main-heading">FIT-OUT</h2>
-		<div class="text-slider">
-		<div>
+		
+
 <b>Our Fit-out Services include:</b>
 <ul><li>Partitions</li>
 <li>Decoration</li>
@@ -749,12 +771,13 @@ QAQC Checks
 <li>Tile Works</li>
 <li>Ceilings</li>
 <li><b>And More.</b></li>
-</ul>
-</div><div><p>When recreating and redesigning spaces, it is important to take time to understand the purpose of the fit-out or refurbishment project.</p>
+<br>
+<p>When recreating and redesigning spaces, it is important to take time to understand the purpose of the fit-out or refurbishment project.</p>
 <p>More comfortable spaces? 
 A themed design aesthetic? 
-Or simply an updated look to outdated interiors?</p><p>The goal of any fit-out determines the plan of action for our Fit-out team. However, a constant across every project – every space we reimagine is creative and practical. A functional distribution of spaces that makes each space organized and clutter-free – whether at home, at work or at in a luxury hotel.</p><p>To make this process easy for our clients, we assign a Project Manager who ensures a successful project from conception to completion – in the given time, and budget.</p></div>		</div>
+Or simply an updated look to outdated interiors?</p><p>The goal of any fit-out determines the plan of action for our Fit-out team. However, a constant across every project – every space we reimagine is creative and practical. A functional distribution of spaces that makes each space organized and clutter-free – whether at home, at work or at in a luxury hotel.</p><p>To make this process easy for our clients, we assign a Project Manager who ensures a successful project from conception to completion – in the given time, and budget.</p>
 		</article>
+	</ul>
 </section>
 </div>
 
@@ -784,7 +807,9 @@ Or simply an updated look to outdated interiors?</p><p>The goal of any fit-out d
 
 <!------------------MAINTENANCE------------------------------->
 <div class="services-container">
-	<section id="maintenance" class="services" style="width:100%;
+	<section id="maintenance" class="services" style="width:100%;  padding: 70px 15%;
+	min-height: 240px;
+	min-height: 369px;
 	">
 			<article>
 			<h2 class="main-heading">Maintenance</h2>
@@ -804,14 +829,14 @@ Or simply an updated look to outdated interiors?</p><p>The goal of any fit-out d
 		<li>Building Cleaning Services</li>
 		<li>Swimming Pool Repair &amp; Maintenance</li>
 	</ul></p>
-	</div>
-	<div><p><b>Mechanical &amp; Electrical</b>A/C Installation &amp; Maintenance
+	<p><b>Mechanical &amp; Electrical</b>A/C Installation &amp; Maintenance
 	Electrical Setup and Fault Repair
 	Electrical Works
 	High/ Low Voltage Maintenance</p>
 	<p><b>Annual Maintenance Packages</b>
 	We undertake annual maintenance contracts and provide discounted packages according to various customer requirements.</p></div>		</div>
 			</article>
+		</ul>
 	</section>
 	
 

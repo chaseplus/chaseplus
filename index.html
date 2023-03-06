@@ -1,422 +1,1388 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/javascript">
+      window.NREUM || (NREUM = {}),
+        (__nr_require = (function (t, e, n) {
+          function r(n) {
+            if (!e[n]) {
+              var o = (e[n] = { exports: {} });
+              t[n][0].call(
+                o.exports,
+                function (e) {
+                  var o = t[n][1][e];
+                  return r(o || e);
+                },
+                o,
+                o.exports
+              );
+            }
+            return e[n].exports;
+          }
+          if ("function" == typeof __nr_require) return __nr_require;
+          for (var o = 0; o < n.length; o++) r(n[o]);
+          return r;
+        })(
+          {
+            1: [
+              function (t, e, n) {
+                function r() {}
+                function o(t, e, n) {
+                  return function () {
+                    return (
+                      i(
+                        t,
+                        [new Date().getTime()].concat(u(arguments)),
+                        e ? null : this,
+                        n
+                      ),
+                      e ? void 0 : this
+                    );
+                  };
+                }
+                var i = t("handle"),
+                  a = t(2),
+                  u = t(3),
+                  c = t("ee").get("tracer"),
+                  f = NREUM;
+                "undefined" == typeof window.newrelic && (newrelic = f);
+                var s = [
+                    "setPageViewName",
+                    "setCustomAttribute",
+                    "setErrorHandler",
+                    "finished",
+                    "addToTrace",
+                    "inlineHit",
+                  ],
+                  p = "api-",
+                  l = p + "ixn-";
+                a(s, function (t, e) {
+                  f[e] = o(p + e, !0, "api");
+                }),
+                  (f.addPageAction = o(p + "addPageAction", !0)),
+                  (e.exports = newrelic),
+                  (f.interaction = function () {
+                    return new r().get();
+                  });
+                var d = (r.prototype = {
+                  createTracer: function (t, e) {
+                    var n = {},
+                      r = this,
+                      o = "function" == typeof e;
+                    return (
+                      i(l + "tracer", [Date.now(), t, n], r),
+                      function () {
+                        if (
+                          (c.emit(
+                            (o ? "" : "no-") + "fn-start",
+                            [Date.now(), r, o],
+                            n
+                          ),
+                          o)
+                        )
+                          try {
+                            return e.apply(this, arguments);
+                          } finally {
+                            c.emit("fn-end", [Date.now()], n);
+                          }
+                      }
+                    );
+                  },
+                });
+                a(
+                  "setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(
+                    ","
+                  ),
+                  function (t, e) {
+                    d[e] = o(l + e);
+                  }
+                ),
+                  (newrelic.noticeError = function (t) {
+                    "string" == typeof t && (t = new Error(t)),
+                      i("err", [t, new Date().getTime()]);
+                  });
+              },
+              {},
+            ],
+            2: [
+              function (t, e, n) {
+                function r(t, e) {
+                  var n = [],
+                    r = "",
+                    i = 0;
+                  for (r in t) o.call(t, r) && ((n[i] = e(r, t[r])), (i += 1));
+                  return n;
+                }
+                var o = Object.prototype.hasOwnProperty;
+                e.exports = r;
+              },
+              {},
+            ],
+            3: [
+              function (t, e, n) {
+                function r(t, e, n) {
+                  e || (e = 0),
+                    "undefined" == typeof n && (n = t ? t.length : 0);
+                  for (
+                    var r = -1, o = n - e || 0, i = Array(o < 0 ? 0 : o);
+                    ++r < o;
 
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(u(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(2),u=t(3),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],p="api-",l=p+"ixn-";a(s,function(t,e){f[e]=o(p+e,!0,"api")}),f.addPageAction=o(p+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){d[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],2:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],3:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?u(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var s=f[m[n]];return s&&s.push([w,n,r,i]),i}function p(t,e){g[t]=l(t).concat(e)}function l(t){return g[t]||[]}function d(t){return s[t]=s[t]||o(n)}function v(t,e){c(t,function(t,n){e=e||"feature",m[n]=e,e in f||(f[e]=[])})}var g={},m={},w={on:p,emit:n,get:d,listeners:l,context:e,buffer:v};return w}function i(){return new r}var a="nr@context",u=t("gos"),c=t(2),f={},s={},p=e.exports=o();p.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!h++){var t=y.info=NREUM.info,e=s.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(m,function(e,n){t[e]||(t[e]=n)});var n="https"===g.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",u("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===s.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=t("handle"),c=t(2),f=window,s=f.document,p="addEventListener",l="attachEvent",d=f.XMLHttpRequest,v=d&&d.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:d,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(1);var g=""+location,m={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},w=d&&v&&v[p]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:g,features:{},xhrWrappable:w};s[p]?(s[p]("DOMContentLoaded",i,!1),f[p]("load",r,!1)):(s[l]("onreadystatechange",o),f[l]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
-<title>Chase Interiors</title>
-<link rel="profile" href="http://gmpg.org/xfn/11">
+                  )
+                    i[r] = t[e + r];
+                  return i;
+                }
+                e.exports = r;
+              },
+              {},
+            ],
+            ee: [
+              function (t, e, n) {
+                function r() {}
+                function o(t) {
+                  function e(t) {
+                    return t && t instanceof r ? t : t ? u(t, a, i) : i();
+                  }
+                  function n(n, r, o) {
+                    t && t(n, r, o);
+                    for (
+                      var i = e(o), a = l(n), u = a.length, c = 0;
+                      c < u;
+                      c++
+                    )
+                      a[c].apply(i, r);
+                    var s = f[m[n]];
+                    return s && s.push([w, n, r, i]), i;
+                  }
+                  function p(t, e) {
+                    g[t] = l(t).concat(e);
+                  }
+                  function l(t) {
+                    return g[t] || [];
+                  }
+                  function d(t) {
+                    return (s[t] = s[t] || o(n));
+                  }
+                  function v(t, e) {
+                    c(t, function (t, n) {
+                      (e = e || "feature"), (m[n] = e), e in f || (f[e] = []);
+                    });
+                  }
+                  var g = {},
+                    m = {},
+                    w = {
+                      on: p,
+                      emit: n,
+                      get: d,
+                      listeners: l,
+                      context: e,
+                      buffer: v,
+                    };
+                  return w;
+                }
+                function i() {
+                  return new r();
+                }
+                var a = "nr@context",
+                  u = t("gos"),
+                  c = t(2),
+                  f = {},
+                  s = {},
+                  p = (e.exports = o());
+                p.backlog = f;
+              },
+              {},
+            ],
+            gos: [
+              function (t, e, n) {
+                function r(t, e, n) {
+                  if (o.call(t, e)) return t[e];
+                  var r = n();
+                  if (Object.defineProperty && Object.keys)
+                    try {
+                      return (
+                        Object.defineProperty(t, e, {
+                          value: r,
+                          writable: !0,
+                          enumerable: !1,
+                        }),
+                        r
+                      );
+                    } catch (i) {}
+                  return (t[e] = r), r;
+                }
+                var o = Object.prototype.hasOwnProperty;
+                e.exports = r;
+              },
+              {},
+            ],
+            handle: [
+              function (t, e, n) {
+                function r(t, e, n, r) {
+                  o.buffer([t], r), o.emit(t, e, n);
+                }
+                var o = t("ee").get("handle");
+                (e.exports = r), (r.ee = o);
+              },
+              {},
+            ],
+            id: [
+              function (t, e, n) {
+                function r(t) {
+                  var e = typeof t;
+                  return !t || ("object" !== e && "function" !== e)
+                    ? -1
+                    : t === window
+                    ? 0
+                    : a(t, i, function () {
+                        return o++;
+                      });
+                }
+                var o = 1,
+                  i = "nr@id",
+                  a = t("gos");
+                e.exports = r;
+              },
+              {},
+            ],
+            loader: [
+              function (t, e, n) {
+                function r() {
+                  if (!h++) {
+                    var t = (y.info = NREUM.info),
+                      e = s.getElementsByTagName("script")[0];
+                    if (t && t.licenseKey && t.applicationID && e) {
+                      c(m, function (e, n) {
+                        t[e] || (t[e] = n);
+                      });
+                      var n = "https" === g.split(":")[0] || t.sslForHttp;
+                      (y.proto = n ? "https://" : "http://"),
+                        u("mark", ["onload", a()], null, "api");
+                      var r = s.createElement("script");
+                      (r.src = y.proto + t.agent),
+                        e.parentNode.insertBefore(r, e);
+                    }
+                  }
+                }
+                function o() {
+                  "complete" === s.readyState && i();
+                }
+                function i() {
+                  u("mark", ["domContent", a()], null, "api");
+                }
+                function a() {
+                  return new Date().getTime();
+                }
+                var u = t("handle"),
+                  c = t(2),
+                  f = window,
+                  s = f.document,
+                  p = "addEventListener",
+                  l = "attachEvent",
+                  d = f.XMLHttpRequest,
+                  v = d && d.prototype;
+                (NREUM.o = {
+                  ST: setTimeout,
+                  CT: clearTimeout,
+                  XHR: d,
+                  REQ: f.Request,
+                  EV: f.Event,
+                  PR: f.Promise,
+                  MO: f.MutationObserver,
+                }),
+                  t(1);
+                var g = "" + location,
+                  m = {
+                    beacon: "bam.nr-data.net",
+                    errorBeacon: "bam.nr-data.net",
+                    agent: "js-agent.newrelic.com/nr-974.min.js",
+                  },
+                  w = d && v && v[p] && !/CriOS/.test(navigator.userAgent),
+                  y = (e.exports = {
+                    offset: a(),
+                    origin: g,
+                    features: {},
+                    xhrWrappable: w,
+                  });
+                s[p]
+                  ? (s[p]("DOMContentLoaded", i, !1), f[p]("load", r, !1))
+                  : (s[l]("onreadystatechange", o), f[l]("onload", r)),
+                  u("mark", ["firstbyte", a()], null, "api");
+                var h = 0;
+              },
+              {},
+            ],
+          },
+          {},
+          ["loader"]
+        ));
+    </script>
+    <title>Chase Interiors</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-<link rel="pingback" href="xmlrpc.php">
-<link rel="apple-touch-icon" sizes="57x57" href="wp-content/themes/chaseinteriors/images/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="wp-content/themes/chaseinteriors/images/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="wp-content/themes/chaseinteriors/images/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="wp-content/themes/chaseinteriors/images/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="wp-content/themes/chaseinteriors/images/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="wp-content/themes/chaseinteriors/images/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="wp-content/themes/chaseinteriors/images/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="wp-content/themes/chaseinteriors/images/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="wp-content/themes/chaseinteriors/images/apple-touch-icon-180x180.png">
-<link rel="icon" type="image/png" href="wp-content/themes/chaseinteriors/images/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="wp-content/themes/chaseinteriors/images/android-chrome-192x192.png" sizes="192x192">
-<link rel="icon" type="image/png" href="wp-content/themes/chaseinteriors/images/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="wp-content/themes/chaseinteriors/images/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="wp-content/themes/chaseinteriors/images/manifest.json">
-<link rel="shortcut icon" href="wp-content/themes/chaseinteriors/images/favicon.ico">
-<meta name="msapplication-TileColor" content="#00a300">
-<meta name="msapplication-TileImage" content="http://chase-interiors.com/wp-content/themes/chaseinteriors/images/mstile-144x144.png">
-<meta name="msapplication-config" content="http://chase-interiors.com/wp-content/themes/chaseinteriors/images/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
-<link rel="alternate" type="application/rss+xml" title="Chase Interiors &raquo; Feed" href="feed/index.html" />
-<link rel="alternate" type="application/rss+xml" title="Chase Interiors &raquo; Comments Feed" href="comments/feed/index.html" />
-		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/chase-interiors.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.5"}};
-			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;return g&&g.fillText?(g.textBaseline="top",g.font="600 32px Arial","flag"===a?(g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3):"diversity"===a?(g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e):("simple"===a?g.fillText(h(55357,56835),0,0):g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
-		</script>
-		<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
-<link rel='stylesheet' id='all_around-css-css'  href='wp-content/plugins/all_around/css/frontend/content_slider_style4235.css?ver=4.4.5' type='text/css' media='all' />
-<link rel='stylesheet' id='prettyPhoto-css-css'  href='wp-content/plugins/all_around/css/frontend/prettyPhoto4235.css?ver=4.4.5' type='text/css' media='all' />
-<link rel='stylesheet' id='dosis-css-css'  href='http://fonts.googleapis.com/css?family=Dosis%3A400%2C200%2C300%2C500%2C600%2C700%2C800&amp;ver=4.4.5' type='text/css' media='all' />
-<link rel='stylesheet' id='contact-form-7-css'  href='wp-content/plugins/contact-form-7/includes/css/styles5b31.css?ver=4.3.1' type='text/css' media='all' />
-<link rel='stylesheet' id='rs-plugin-settings-css'  href='wp-content/plugins/revslider/rs-plugin/css/settings726a.css?rev=4.6.0&amp;ver=4.4.5' type='text/css' media='all' />
-<style id='rs-plugin-settings-inline-css' type='text/css'>
-.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}
-</style>
-<link rel='stylesheet' id='animsition-css'  href='wp-content/themes/chaseinteriors/includes/css/animsition.min909d.css?ver=1477744323' type='text/css' media='all' />
-<link rel='stylesheet' id='_tk-bootstrap-wp-css'  href='wp-content/themes/chaseinteriors/includes/css/bootstrap-wp4235.css?ver=4.4.5' type='text/css' media='all' />
-<link rel='stylesheet' id='_tk-bootstrap-css'  href='wp-content/themes/chaseinteriors/includes/resources/bootstrap/css/bootstrap.min4235.css?ver=4.4.5' type='text/css' media='all' />
-<link rel='stylesheet' id='_tk-font-awesome-css'  href='wp-content/themes/chaseinteriors/includes/css/font-awesome.minbfce.css?ver=4.1.0' type='text/css' media='all' />
-<link rel='stylesheet' id='_tk-owl-carousel-css'  href='wp-content/themes/chaseinteriors/includes/css/owl.carousel4235.css?ver=4.4.5' type='text/css' media='all' />
-<link rel='stylesheet' id='_tk-style-css'  href='wp-content/themes/chaseinteriors/style4235.css?ver=4.4.5' type='text/css' media='all' />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type='text/javascript' src='wp-includes/js/jquery/jqueryc1d8.js?ver=1.11.3'></script>
-<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min1576.js?ver=1.2.1'></script>
-<script type='text/javascript' src='wp-content/plugins/all_around/js/frontend/jquery.content_slider.min4235.js?ver=4.4.5'></script>
-<script type='text/javascript' src='wp-content/plugins/all_around/js/frontend/jquery.mousewheel4235.js?ver=4.4.5'></script>
-<script type='text/javascript' src='wp-content/plugins/all_around/js/frontend/jquery.prettyPhoto4235.js?ver=4.4.5'></script>
-<script type='text/javascript' src='wp-content/plugins/all_around/js/frontend/jquery.additional_content4235.js?ver=4.4.5'></script>
-<script type='text/javascript' src='wp-content/plugins/all_around/js/frontend/jquery.animate-colors4235.js?ver=4.4.5'></script>
-<script type='text/javascript' src='wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.tools.min726a.js?rev=4.6.0&amp;ver=4.4.5'></script>
-<script type='text/javascript' src='wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min726a.js?rev=4.6.0&amp;ver=4.4.5'></script>
-<script type='text/javascript' src='wp-content/themes/chaseinteriors/includes/resources/bootstrap/js/bootstrap.min4235.js?ver=4.4.5'></script>
-<script type='text/javascript' src='wp-content/themes/chaseinteriors/includes/js/bootstrap-wp4235.js?ver=4.4.5'></script>
-<script type='text/javascript' src='wp-content/themes/chaseinteriors/includes/js/owl.carousel.min4235.js?ver=4.4.5'></script>
-<link rel='https://api.w.org/' href='wp-json/index.html' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 4.4.5" />
-<link rel="canonical" href="index.html" />
-<link rel='shortlink' href='index.html' />
-		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
-		<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','../www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-61194601-5', 'auto');
-ga('send', 'pageview');
-</script>
-</head>
-<body class="home page page-id-15 page-template page-template-templates page-template-homepage page-template-templateshomepage-php">
-<div class="animsition-overlay">
-<div class="header-top">
-<div class="container">
-<div class="quicklinks">
-<ul>
-	<li><a href="tel:80024273800"><i class="fa fa-phone"></i>
-		<!-- <em>800 Chase 800</em> -->
-	</a></li>
-	<li><a target="_blank" href="https://www.facebook.com/profile.php?id=100089838798484"><i class="fa fa-facebook"></i></a></li>
-	<li><a target="_blank" href="https://instagram.com/chaseplusinteriors?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram"></i></a></li>
-	<li><a target="_blank" href="https://www.linkedin.com/company/chaseplusinterior/"><i class="fa fa-linkedin"></i></a></li>
-<!-- <li><a href="#"><i class="fa fa-search"></i></a></li> -->
-</ul>
-</div>
-</div>
-</div>
-<header id="masthead" class="site-header" role="banner" data-spy="affix" data-offset-top="100">
-<div class="container">
-<div class="row">
-<div class="col-sm-3">
-<div class="site-branding">
-<a href="index.html" title="Chase Interiors" rel="home">
-	<img class="img-responsive" src="wp-content/themes/chaseinteriors/images/newlogo.png" title="Chase Interiors" alt="Chase Interiors" />
-</a>
-</div>
-</div>
-<div class="col-sm-9">
-<nav class="site-navigation">
-<div class="navbar navbar-default">
-	<div class="navbar-header">
-		<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<span class="sr-only">Toggle navigation </span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		</button>
-		<!-- Your site title as branding in the menu -->
-		<a class="navbar-brand" href="index.html" title="Chase Interiors" rel="home">Chase Interiors</a>
-	</div>
-	<!-- The WordPress Menu goes here -->
-		<div class="collapse navbar-collapse"><ul id="main-menu" class="nav navbar-nav"><li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-15 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-18"><a href="index.html">About us</a>
-<ul class="sub-menu">
-	<li id="menu-item-89" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-89"><a rel="m_PageScroll2id" href="index.html#company-overview">Overview</a></li>
-	<li id="menu-item-90" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-90"><a rel="m_PageScroll2id" href="index.html#our-philosophy">Our Philosophy</a></li>
-	<li id="menu-item-93" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-93"><a rel="m_PageScroll2id" href="index.html#our-group">Our Group</a></li>
-</ul>
-</li>
-<li id="menu-item-87" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-87"><a href="our-services/index.html">Our Services</a>
-<ul class="sub-menu">
-	<li id="menu-item-94" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-94"><a rel="m_PageScroll2id" href="index.html#design">Design</a></li>
-	<li id="menu-item-98" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-98"><a rel="m_PageScroll2id" href="index.html#Approvals">Approvals</a></li>
-	<li id="menu-item-98" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-98"><a rel="m_PageScroll2id" href="index.html#Project">Project Management</a></li>
-	<li id="menu-item-95" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-95"><a rel="m_PageScroll2id" href="index.html#fit-out">Fit-out</a></li>
-	<li id="menu-item-96" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-96"><a rel="m_PageScroll2id" href="index.html#mep">MEP</a></li>
-	<li id="menu-item-97" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-97"><a rel="m_PageScroll2id" href="index.html#maintenance">Maintenance</a></li>
-	<li id="menu-item-98" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-98"><a rel="m_PageScroll2id" href="index.html#our-process">Our Process</a></li>
-</ul>
-</li>
-<li id="menu-item-88" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-88"><a href="our-work/index.html">Our Work</a>
-<ul class="sub-menu">
-	<li id="menu-item-99" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-99"><a rel="m_PageScroll2id" href="our-work/index.html#projects">Projects</a></li>
-	<li id="menu-item-100" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-100"><a rel="m_PageScroll2id" href="our-work/index.html#clients">Clients</a></li>
-</ul>
-</li>
-<li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="contact-us/index.html">Contact Us</a></li>
-</ul></div>	</div><!-- .navbar -->
-	</nav><!-- .site-navigation -->
-</div>
-</div>
-</div><!-- .container -->
-</header><!-- #masthead -->
-<div class="relative">
-<!-- START REVOLUTION SLIDER 4.6.0 fullwidth mode -->
+    <link rel="pingback" href="xmlrpc.php" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="wp-content/themes/chaseinteriors/images/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="wp-content/themes/chaseinteriors/images/apple-touch-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="wp-content/themes/chaseinteriors/images/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="wp-content/themes/chaseinteriors/images/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="wp-content/themes/chaseinteriors/images/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="wp-content/themes/chaseinteriors/images/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="wp-content/themes/chaseinteriors/images/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="wp-content/themes/chaseinteriors/images/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="wp-content/themes/chaseinteriors/images/apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="wp-content/themes/chaseinteriors/images/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="wp-content/themes/chaseinteriors/images/android-chrome-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="wp-content/themes/chaseinteriors/images/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="wp-content/themes/chaseinteriors/images/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="manifest"
+      href="wp-content/themes/chaseinteriors/images/manifest.json"
+    />
+    <link
+      rel="shortcut icon"
+      href="wp-content/themes/chaseinteriors/images/favicon.ico"
+    />
+    <meta name="msapplication-TileColor" content="#00a300" />
+    <meta
+      name="msapplication-TileImage"
+      content="http://chase-interiors.com/wp-content/themes/chaseinteriors/images/mstile-144x144.png"
+    />
+    <meta
+      name="msapplication-config"
+      content="http://chase-interiors.com/wp-content/themes/chaseinteriors/images/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Chase Interiors &raquo; Feed"
+      href="feed/index.html"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Chase Interiors &raquo; Comments Feed"
+      href="comments/feed/index.html"
+    />
+    <script type="text/javascript">
+      window._wpemojiSettings = {
+        baseUrl: "https:\/\/s.w.org\/images\/core\/emoji\/72x72\/",
+        ext: ".png",
+        source: {
+          concatemoji:
+            "http:\/\/chase-interiors.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.5",
+        },
+      };
+      !(function (a, b, c) {
+        function d(a) {
+          var c,
+            d,
+            e,
+            f = b.createElement("canvas"),
+            g = f.getContext && f.getContext("2d"),
+            h = String.fromCharCode;
+          return g && g.fillText
+            ? ((g.textBaseline = "top"),
+              (g.font = "600 32px Arial"),
+              "flag" === a
+                ? (g.fillText(h(55356, 56806, 55356, 56826), 0, 0),
+                  f.toDataURL().length > 3e3)
+                : "diversity" === a
+                ? (g.fillText(h(55356, 57221), 0, 0),
+                  (c = g.getImageData(16, 16, 1, 1).data),
+                  g.fillText(h(55356, 57221, 55356, 57343), 0, 0),
+                  (c = g.getImageData(16, 16, 1, 1).data),
+                  (e = c[0] + "," + c[1] + "," + c[2] + "," + c[3]),
+                  d !== e)
+                : ("simple" === a
+                    ? g.fillText(h(55357, 56835), 0, 0)
+                    : g.fillText(h(55356, 57135), 0, 0),
+                  0 !== g.getImageData(16, 16, 1, 1).data[0]))
+            : !1;
+        }
+        function e(a) {
+          var c = b.createElement("script");
+          (c.src = a),
+            (c.type = "text/javascript"),
+            b.getElementsByTagName("head")[0].appendChild(c);
+        }
+        var f, g;
+        (c.supports = {
+          simple: d("simple"),
+          flag: d("flag"),
+          unicode8: d("unicode8"),
+          diversity: d("diversity"),
+        }),
+          (c.DOMReady = !1),
+          (c.readyCallback = function () {
+            c.DOMReady = !0;
+          }),
+          (c.supports.simple &&
+            c.supports.flag &&
+            c.supports.unicode8 &&
+            c.supports.diversity) ||
+            ((g = function () {
+              c.readyCallback();
+            }),
+            b.addEventListener
+              ? (b.addEventListener("DOMContentLoaded", g, !1),
+                a.addEventListener("load", g, !1))
+              : (a.attachEvent("onload", g),
+                b.attachEvent("onreadystatechange", function () {
+                  "complete" === b.readyState && c.readyCallback();
+                })),
+            (f = c.source || {}),
+            f.concatemoji
+              ? e(f.concatemoji)
+              : f.wpemoji && f.twemoji && (e(f.twemoji), e(f.wpemoji)));
+      })(window, document, window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+      img.wp-smiley,
+      img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 0.07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      id="all_around-css-css"
+      href="wp-content/plugins/all_around/css/frontend/content_slider_style4235.css?ver=4.4.5"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="prettyPhoto-css-css"
+      href="wp-content/plugins/all_around/css/frontend/prettyPhoto4235.css?ver=4.4.5"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="dosis-css-css"
+      href="http://fonts.googleapis.com/css?family=Dosis%3A400%2C200%2C300%2C500%2C600%2C700%2C800&amp;ver=4.4.5"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="contact-form-7-css"
+      href="wp-content/plugins/contact-form-7/includes/css/styles5b31.css?ver=4.3.1"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="rs-plugin-settings-css"
+      href="wp-content/plugins/revslider/rs-plugin/css/settings726a.css?rev=4.6.0&amp;ver=4.4.5"
+      type="text/css"
+      media="all"
+    />
+    <style id="rs-plugin-settings-inline-css" type="text/css">
+      .tp-caption a {
+        color: #ff7302;
+        text-shadow: none;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+      }
+      .tp-caption a:hover {
+        color: #ffa902;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      id="animsition-css"
+      href="wp-content/themes/chaseinteriors/includes/css/animsition.min909d.css?ver=1477744323"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="_tk-bootstrap-wp-css"
+      href="wp-content/themes/chaseinteriors/includes/css/bootstrap-wp4235.css?ver=4.4.5"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="_tk-bootstrap-css"
+      href="wp-content/themes/chaseinteriors/includes/resources/bootstrap/css/bootstrap.min4235.css?ver=4.4.5"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="_tk-font-awesome-css"
+      href="wp-content/themes/chaseinteriors/includes/css/font-awesome.minbfce.css?ver=4.1.0"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="_tk-owl-carousel-css"
+      href="wp-content/themes/chaseinteriors/includes/css/owl.carousel4235.css?ver=4.4.5"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="_tk-style-css"
+      href="wp-content/themes/chaseinteriors/style4235.css?ver=4.4.5"
+      type="text/css"
+      media="all"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="wp-includes/js/jquery/jqueryc1d8.js?ver=1.11.3"
+    ></script>
+    <script
+      type="text/javascript"
+      src="wp-includes/js/jquery/jquery-migrate.min1576.js?ver=1.2.1"
+    ></script>
+    <script
+      type="text/javascript"
+      src="wp-content/plugins/all_around/js/frontend/jquery.content_slider.min4235.js?ver=4.4.5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="wp-content/plugins/all_around/js/frontend/jquery.mousewheel4235.js?ver=4.4.5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="wp-content/plugins/all_around/js/frontend/jquery.prettyPhoto4235.js?ver=4.4.5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="wp-content/plugins/all_around/js/frontend/jquery.additional_content4235.js?ver=4.4.5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="wp-content/plugins/all_around/js/frontend/jquery.animate-colors4235.js?ver=4.4.5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.tools.min726a.js?rev=4.6.0&amp;ver=4.4.5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min726a.js?rev=4.6.0&amp;ver=4.4.5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="wp-content/themes/chaseinteriors/includes/resources/bootstrap/js/bootstrap.min4235.js?ver=4.4.5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="wp-content/themes/chaseinteriors/includes/js/bootstrap-wp4235.js?ver=4.4.5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="wp-content/themes/chaseinteriors/includes/js/owl.carousel.min4235.js?ver=4.4.5"
+    ></script>
+    <link rel="https://api.w.org/" href="wp-json/index.html" />
+    <link
+      rel="EditURI"
+      type="application/rsd+xml"
+      title="RSD"
+      href="xmlrpc0db0.php?rsd"
+    />
+    <link
+      rel="wlwmanifest"
+      type="application/wlwmanifest+xml"
+      href="wp-includes/wlwmanifest.xml"
+    />
+    <meta name="generator" content="WordPress 4.4.5" />
+    <link rel="canonical" href="index.html" />
+    <link rel="shortlink" href="index.html" />
+    <style type="text/css">
+      .recentcomments a {
+        display: inline !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+    </style>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "../www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-61194601-5", "auto");
+      ga("send", "pageview");
+    </script>
+  </head>
+  <body
+    class="home page page-id-15 page-template page-template-templates page-template-homepage page-template-templateshomepage-php"
+  >
+    <div class="animsition-overlay">
+      <div class="header-top">
+        <div class="container">
+          <div class="quicklinks">
+            <ul>
+              <li>
+                <a href="tel:80024273800"
+                  ><i class="fa fa-phone"></i>
+                  <!-- <em>800 Chase 800</em> -->
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/profile.php?id=100089838798484"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://instagram.com/chaseplusinteriors?igshid=YmMyMTA2M2Y="
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/company/chaseplusinterior/"
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </li>
+              <!-- <li><a href="#"><i class="fa fa-search"></i></a></li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <header
+        id="masthead"
+        class="site-header"
+        role="banner"
+        data-spy="affix"
+        data-offset-top="100"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="site-branding">
+                <a href="index.html" title="Chase Interiors" rel="home">
+                  <img
+                    class="img-responsive"
+                    src="wp-content/themes/chaseinteriors/images/newlogo.png"
+                    title="Chase Interiors"
+                    alt="Chase Interiors"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <nav class="site-navigation">
+                <div class="navbar navbar-default">
+                  <div class="navbar-header">
+                    <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+                    <button
+                      type="button"
+                      class="navbar-toggle"
+                      data-toggle="collapse"
+                      data-target=".navbar-collapse"
+                    >
+                      <span class="sr-only">Toggle navigation </span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <!-- Your site title as branding in the menu -->
+                    <a
+                      class="navbar-brand"
+                      href="index.html"
+                      title="Chase Interiors"
+                      rel="home"
+                      >Chase Interiors</a
+                    >
+                  </div>
+                  <!-- The WordPress Menu goes here -->
+                  <div class="collapse navbar-collapse">
+                    <ul id="main-menu" class="nav navbar-nav">
+                      <li
+                        id="menu-item-18"
+                        class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-15 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-18"
+                      >
+                        <a href="index.html">About us</a>
+                        <ul class="sub-menu">
+                          <li
+                            id="menu-item-89"
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-89"
+                          >
+                            <a
+                              rel="m_PageScroll2id"
+                              href="index.html#company-overview"
+                              >Overview</a
+                            >
+                          </li>
+                          <li
+                            id="menu-item-90"
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-90"
+                          >
+                            <a
+                              rel="m_PageScroll2id"
+                              href="index.html#our-philosophy"
+                              >Our Philosophy</a
+                            >
+                          </li>
+                          <li
+                            id="menu-item-93"
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-93"
+                          >
+                            <a rel="m_PageScroll2id" href="index.html#our-group"
+                              >Our Group</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                      <li
+                        id="menu-item-87"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-87"
+                      >
+                        <a href="our-services/index.html">Our Services</a>
+                        <ul class="sub-menu">
+                          <li
+                            id="menu-item-94"
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-94"
+                          >
+                            <a rel="m_PageScroll2id" href="index.html#design"
+                              >Design</a
+                            >
+                          </li>
+                          <li
+                            id="menu-item-98"
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-98"
+                          >
+                            <a rel="m_PageScroll2id" href="index.html#Approvals"
+                              >Approvals</a
+                            >
+                          </li>
+                          <li
+                            id="menu-item-98"
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-98"
+                          >
+                            <a rel="m_PageScroll2id" href="index.html#Project"
+                              >Project Management</a
+                            >
+                          </li>
+                          <li
+                            id="menu-item-95"
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-95"
+                          >
+                            <a rel="m_PageScroll2id" href="index.html#fit-out"
+                              >Fit-out</a
+                            >
+                          </li>
+                          <li
+                            id="menu-item-96"
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-96"
+                          >
+                            <a rel="m_PageScroll2id" href="index.html#mep"
+                              >MEP</a
+                            >
+                          </li>
+                          <li
+                            id="menu-item-97"
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-97"
+                          >
+                            <a
+                              rel="m_PageScroll2id"
+                              href="index.html#maintenance"
+                              >Maintenance</a
+                            >
+                          </li>
+                          <li
+                            id="menu-item-98"
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-98"
+                          >
+                            <a
+                              rel="m_PageScroll2id"
+                              href="index.html#our-process"
+                              >Our Process</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                      <li
+                        id="menu-item-88"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-88"
+                      >
+                        <a href="our-work/index.html">Our Work</a>
+                        <ul class="sub-menu">
+                          <li
+                            id="menu-item-99"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-99"
+                          >
+                            <a
+                              rel="m_PageScroll2id"
+                              href="our-work/index.html#projects"
+                              >Projects</a
+                            >
+                          </li>
+                          <li
+                            id="menu-item-100"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-100"
+                          >
+                            <a
+                              rel="m_PageScroll2id"
+                              href="our-work/index.html#clients"
+                              >Clients</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                      <li
+                        id="menu-item-86"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"
+                      >
+                        <a href="contact-us/index.html">Contact Us</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- .navbar -->
+              </nav>
+              <!-- .site-navigation -->
+            </div>
+          </div>
+        </div>
+        <!-- .container -->
+      </header>
+      <!-- #masthead -->
+      <div class="relative">
+        <!-- START REVOLUTION SLIDER 4.6.0 fullwidth mode -->
 
-<div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#E9E9E9;padding:0px;margin-top:0px;margin-bottom:0px;max-height:540px;">
-	<div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;max-height:540px;height:540px;">
-<ul>	<!-- SLIDE  -->
-	<li data-transition="fade" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
-		<!-- MAIN IMAGE -->
-		<img src="wp-content/uploads/2015/05/about-slide.jpg"  alt="about-slide"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-		<!-- LAYERS -->
-	</li>
-	<!-- SLIDE  -->
-	<li data-transition="fade" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
-		<!-- MAIN IMAGE -->
-		<img src="wp-content/uploads/2015/05/services-slide.jpg"  alt="services-slide"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-		<!-- LAYERS -->
-	</li>
-	<!-- SLIDE  -->
-	<li data-transition="fade" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
-		<!-- MAIN IMAGE -->
-		<img src="wp-content/uploads/2015/05/work-slide.jpg"  alt="work-slide"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-		<!-- LAYERS -->
-	</li>
-</ul>
-<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
+        <div
+          id="rev_slider_1_1_wrapper"
+          class="rev_slider_wrapper fullwidthbanner-container"
+          style="
+            margin: 0px auto;
+            background-color: #e9e9e9;
+            padding: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            max-height: 540px;
+          "
+        >
+          <div
+            id="rev_slider_1_1"
+            class="rev_slider fullwidthabanner"
+            style="display: none; max-height: 540px; height: 540px"
+          >
+            <ul>
+              <!-- SLIDE  -->
+              <li
+                data-transition="fade"
+                data-slotamount="7"
+                data-masterspeed="300"
+                data-saveperformance="off"
+              >
+                <!-- MAIN IMAGE -->
+                <img
+                  src="wp-content/uploads/2015/05/about-slide.jpg"
+                  alt="about-slide"
+                  data-bgposition="center center"
+                  data-bgfit="cover"
+                  data-bgrepeat="no-repeat"
+                />
+                <!-- LAYERS -->
+              </li>
+              <!-- SLIDE  -->
+              <li
+                data-transition="fade"
+                data-slotamount="7"
+                data-masterspeed="300"
+                data-saveperformance="off"
+              >
+                <!-- MAIN IMAGE -->
+                <img
+                  src="wp-content/uploads/2015/05/services-slide.jpg"
+                  alt="services-slide"
+                  data-bgposition="center center"
+                  data-bgfit="cover"
+                  data-bgrepeat="no-repeat"
+                />
+                <!-- LAYERS -->
+              </li>
+              <!-- SLIDE  -->
+              <li
+                data-transition="fade"
+                data-slotamount="7"
+                data-masterspeed="300"
+                data-saveperformance="off"
+              >
+                <!-- MAIN IMAGE -->
+                <img
+                  src="wp-content/uploads/2015/05/work-slide.jpg"
+                  alt="work-slide"
+                  data-bgposition="center center"
+                  data-bgfit="cover"
+                  data-bgrepeat="no-repeat"
+                />
+                <!-- LAYERS -->
+              </li>
+            </ul>
+            <div
+              class="tp-bannertimer tp-bottom"
+              style="visibility: hidden !important"
+            ></div>
+          </div>
 
-			<script type="text/javascript">
-
-				/******************************************
+          <script type="text/javascript">
+            /******************************************
 					-	PREPARE PLACEHOLDER FOR SLIDER	-
 				******************************************/
-				
 
-				var setREVStartSize = function() {
-					var	tpopt = new Object();
-						tpopt.startwidth = 1024;
-						tpopt.startheight = 540;
-						tpopt.container = jQuery('#rev_slider_1_1');
-						tpopt.fullScreen = "off";
-						tpopt.forceFullWidth="on";
+            var setREVStartSize = function () {
+              var tpopt = new Object();
+              tpopt.startwidth = 1024;
+              tpopt.startheight = 540;
+              tpopt.container = jQuery("#rev_slider_1_1");
+              tpopt.fullScreen = "off";
+              tpopt.forceFullWidth = "on";
 
-					tpopt.container.closest(".rev_slider_wrapper").css({height:tpopt.container.height()});tpopt.width=parseInt(tpopt.container.width(),0);tpopt.height=parseInt(tpopt.container.height(),0);tpopt.bw=tpopt.width/tpopt.startwidth;tpopt.bh=tpopt.height/tpopt.startheight;if(tpopt.bh>tpopt.bw)tpopt.bh=tpopt.bw;if(tpopt.bh<tpopt.bw)tpopt.bw=tpopt.bh;if(tpopt.bw<tpopt.bh)tpopt.bh=tpopt.bw;if(tpopt.bh>1){tpopt.bw=1;tpopt.bh=1}if(tpopt.bw>1){tpopt.bw=1;tpopt.bh=1}tpopt.height=Math.round(tpopt.startheight*(tpopt.width/tpopt.startwidth));if(tpopt.height>tpopt.startheight&&tpopt.autoHeight!="on")tpopt.height=tpopt.startheight;if(tpopt.fullScreen=="on"){tpopt.height=tpopt.bw*tpopt.startheight;var cow=tpopt.container.parent().width();var coh=jQuery(window).height();if(tpopt.fullScreenOffsetContainer!=undefined){try{var offcontainers=tpopt.fullScreenOffsetContainer.split(",");jQuery.each(offcontainers,function(e,t){coh=coh-jQuery(t).outerHeight(true);if(coh<tpopt.minFullScreenHeight)coh=tpopt.minFullScreenHeight})}catch(e){}}tpopt.container.parent().height(coh);tpopt.container.height(coh);tpopt.container.closest(".rev_slider_wrapper").height(coh);tpopt.container.closest(".forcefullwidth_wrapper_tp_banner").find(".tp-fullwidth-forcer").height(coh);tpopt.container.css({height:"100%"});tpopt.height=coh;}else{tpopt.container.height(tpopt.height);tpopt.container.closest(".rev_slider_wrapper").height(tpopt.height);tpopt.container.closest(".forcefullwidth_wrapper_tp_banner").find(".tp-fullwidth-forcer").height(tpopt.height);}
-				};
+              tpopt.container
+                .closest(".rev_slider_wrapper")
+                .css({ height: tpopt.container.height() });
+              tpopt.width = parseInt(tpopt.container.width(), 0);
+              tpopt.height = parseInt(tpopt.container.height(), 0);
+              tpopt.bw = tpopt.width / tpopt.startwidth;
+              tpopt.bh = tpopt.height / tpopt.startheight;
+              if (tpopt.bh > tpopt.bw) tpopt.bh = tpopt.bw;
+              if (tpopt.bh < tpopt.bw) tpopt.bw = tpopt.bh;
+              if (tpopt.bw < tpopt.bh) tpopt.bh = tpopt.bw;
+              if (tpopt.bh > 1) {
+                tpopt.bw = 1;
+                tpopt.bh = 1;
+              }
+              if (tpopt.bw > 1) {
+                tpopt.bw = 1;
+                tpopt.bh = 1;
+              }
+              tpopt.height = Math.round(
+                tpopt.startheight * (tpopt.width / tpopt.startwidth)
+              );
+              if (tpopt.height > tpopt.startheight && tpopt.autoHeight != "on")
+                tpopt.height = tpopt.startheight;
+              if (tpopt.fullScreen == "on") {
+                tpopt.height = tpopt.bw * tpopt.startheight;
+                var cow = tpopt.container.parent().width();
+                var coh = jQuery(window).height();
+                if (tpopt.fullScreenOffsetContainer != undefined) {
+                  try {
+                    var offcontainers =
+                      tpopt.fullScreenOffsetContainer.split(",");
+                    jQuery.each(offcontainers, function (e, t) {
+                      coh = coh - jQuery(t).outerHeight(true);
+                      if (coh < tpopt.minFullScreenHeight)
+                        coh = tpopt.minFullScreenHeight;
+                    });
+                  } catch (e) {}
+                }
+                tpopt.container.parent().height(coh);
+                tpopt.container.height(coh);
+                tpopt.container.closest(".rev_slider_wrapper").height(coh);
+                tpopt.container
+                  .closest(".forcefullwidth_wrapper_tp_banner")
+                  .find(".tp-fullwidth-forcer")
+                  .height(coh);
+                tpopt.container.css({ height: "100%" });
+                tpopt.height = coh;
+              } else {
+                tpopt.container.height(tpopt.height);
+                tpopt.container
+                  .closest(".rev_slider_wrapper")
+                  .height(tpopt.height);
+                tpopt.container
+                  .closest(".forcefullwidth_wrapper_tp_banner")
+                  .find(".tp-fullwidth-forcer")
+                  .height(tpopt.height);
+              }
+            };
 
-				/* CALL PLACEHOLDER */
-				setREVStartSize();
+            /* CALL PLACEHOLDER */
+            setREVStartSize();
 
+            var tpj = jQuery;
+            tpj.noConflict();
+            var revapi1;
 
-				var tpj=jQuery;
-				tpj.noConflict();
-				var revapi1;
+            tpj(document).ready(function () {
+              if (tpj("#rev_slider_1_1").revolution == undefined)
+                revslider_showDoubleJqueryError("#rev_slider_1_1");
+              else
+                revapi1 = tpj("#rev_slider_1_1").show().revolution({
+                  dottedOverlay: "none",
+                  delay: 9000,
+                  startwidth: 1024,
+                  startheight: 540,
+                  hideThumbs: 0,
 
-				tpj(document).ready(function() {
+                  thumbWidth: 100,
+                  thumbHeight: 50,
+                  thumbAmount: 3,
 
-				if(tpj('#rev_slider_1_1').revolution == undefined)
-					revslider_showDoubleJqueryError('#rev_slider_1_1');
-				else
-				   revapi1 = tpj('#rev_slider_1_1').show().revolution(
-					{
-						dottedOverlay:"none",
-						delay:9000,
-						startwidth:1024,
-						startheight:540,
-						hideThumbs:0,
+                  simplifyAll: "off",
 
-						thumbWidth:100,
-						thumbHeight:50,
-						thumbAmount:3,
-						
-												
-						simplifyAll:"off",
+                  navigationType: "bullet",
+                  navigationArrows: "none",
+                  navigationStyle: "round",
 
-						navigationType:"bullet",
-						navigationArrows:"none",
-						navigationStyle:"round",
+                  touchenabled: "on",
+                  onHoverStop: "on",
+                  nextSlideOnWindowFocus: "off",
 
-						touchenabled:"on",
-						onHoverStop:"on",
-						nextSlideOnWindowFocus:"off",
+                  swipe_threshold: 75,
+                  swipe_min_touches: 1,
+                  drag_block_vertical: false,
 
-						swipe_threshold: 75,
-						swipe_min_touches: 1,
-						drag_block_vertical: false,
-						
-												
-												
-						keyboardNavigation:"off",
+                  keyboardNavigation: "off",
 
-						navigationHAlign:"right",
-						navigationVAlign:"bottom",
-						navigationHOffset:60,
-						navigationVOffset:20,
+                  navigationHAlign: "right",
+                  navigationVAlign: "bottom",
+                  navigationHOffset: 60,
+                  navigationVOffset: 20,
 
-						soloArrowLeftHalign:"left",
-						soloArrowLeftValign:"center",
-						soloArrowLeftHOffset:20,
-						soloArrowLeftVOffset:0,
+                  soloArrowLeftHalign: "left",
+                  soloArrowLeftValign: "center",
+                  soloArrowLeftHOffset: 20,
+                  soloArrowLeftVOffset: 0,
 
-						soloArrowRightHalign:"right",
-						soloArrowRightValign:"center",
-						soloArrowRightHOffset:20,
-						soloArrowRightVOffset:0,
+                  soloArrowRightHalign: "right",
+                  soloArrowRightValign: "center",
+                  soloArrowRightHOffset: 20,
+                  soloArrowRightVOffset: 0,
 
-						shadow:0,
-						fullWidth:"on",
-						fullScreen:"off",
+                  shadow: 0,
+                  fullWidth: "on",
+                  fullScreen: "off",
 
-						spinner:"spinner3",
-						
-						stopLoop:"off",
-						stopAfterLoops:-1,
-						stopAtSlide:-1,
+                  spinner: "spinner3",
 
-						shuffle:"off",
+                  stopLoop: "off",
+                  stopAfterLoops: -1,
+                  stopAtSlide: -1,
 
-						autoHeight:"off",
-						forceFullWidth:"on",
-						
-						
-						hideTimerBar:"on",
-						hideThumbsOnMobile:"off",
-						hideNavDelayOnMobile:1500,
-						hideBulletsOnMobile:"off",
-						hideArrowsOnMobile:"off",
-						hideThumbsUnderResolution:0,
+                  shuffle: "off",
 
-												hideSliderAtLimit:0,
-						hideCaptionAtLimit:0,
-						hideAllCaptionAtLilmit:0,
-						startWithSlide:0					});
+                  autoHeight: "off",
+                  forceFullWidth: "on",
 
+                  hideTimerBar: "on",
+                  hideThumbsOnMobile: "off",
+                  hideNavDelayOnMobile: 1500,
+                  hideBulletsOnMobile: "off",
+                  hideArrowsOnMobile: "off",
+                  hideThumbsUnderResolution: 0,
 
+                  hideSliderAtLimit: 0,
+                  hideCaptionAtLimit: 0,
+                  hideAllCaptionAtLilmit: 0,
+                  startWithSlide: 0,
+                });
+            }); /*ready*/
+          </script>
 
-					
-				});	/*ready*/
-
-			</script>
-
-
-			<style type="text/css">
-				ul.sub-menu:before {
-    content: '';
-    position: fixed;
-    width: 100%;
-    height: 38px;
-    background-color: rgb(253 222 0);
-    top: 120px;
-    z-index: -12;
-    display: block;
-    left: 0;
-}
-	#rev_slider_1_1_wrapper .tp-loader.spinner3 div { background-color: #FFFFFF !important; }
-</style>
-</div><!-- END REVOLUTION SLIDER --><div class="container">
-<div class="contact-form contact-form-home">
-<h3>Enquire Now</h3>
-<div role="form" class="wpcf7" id="wpcf7-f165-o1" lang="en-US" dir="ltr">
-<div class="screen-reader-response"></div>
-<form id="submit-form" action=""  class="wpcf7-form">
-<!-- <div style="display: none;">
+          <style type="text/css">
+            ul.sub-menu:before {
+              content: "";
+              position: fixed;
+              width: 100%;
+              height: 38px;
+              background-color: rgb(253 222 0);
+              top: 120px;
+              z-index: -12;
+              display: block;
+              left: 0;
+            }
+            #rev_slider_1_1_wrapper .tp-loader.spinner3 div {
+              background-color: #ffffff !important;
+            }
+          </style>
+        </div>
+        <!-- END REVOLUTION SLIDER -->
+        <div class="container">
+          <div class="contact-form contact-form-home">
+            <h3>Enquire Now</h3>
+            <div
+              role="form"
+              class="wpcf7"
+              id="wpcf7-f165-o1"
+              lang="en-US"
+              dir="ltr"
+            >
+              <div class="screen-reader-response"></div>
+              <form id="submit-form" action="" class="wpcf7-form">
+                <!-- <div style="display: none;">
 <input type="hidden" name="_wpcf7" value="165" />
 <input type="hidden" name="_wpcf7_version" value="4.3.1" />
 <input type="hidden" name="_wpcf7_locale" value="en_US" />
 <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f165-o1" />
 <input type="hidden" name="_wpnonce" value="03cbd148d1" />
 </div> -->
-<p>
-	<span class="wpcf7-form-control-wrap enquiry-type">
-		<span class="wpcf7-form-control wpcf7-radio enquiry-type">
-			<span class="wpcf7-list-item first">
-				<label>
-					<input type="radio" name="enquiry-type" value="General Enquiry" checked="checked" />
-					&nbsp;
-					<span class="wpcf7-list-item-label">General Enquiry</span>
-				</label>
-			</span>
-			<span class="wpcf7-list-item">
-				<label>
-					<input type="radio" name="enquiry-type" value="Request Call Back" />
-					&nbsp;
-					<span class="wpcf7-list-item-label">Request Call Back</span>
-				</label>
-			</span>
-			<span class="wpcf7-list-item last">
-				<label>
-					<input type="radio" name="enquiry-type" value="Request Quotation" />
-					&nbsp;
-					<span class="wpcf7-list-item-label">Request Quotation</span>
-				</label>
-			</span>
-		</span>
-	</span>
-	<span class="wpcf7-form-control-wrap your-name">
-		<input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name" />
-	</span>
-	<span class="wpcf7-form-control-wrap phone">
-		<input type="tel" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" aria-invalid="false" placeholder="Contact Number" />
-	</span>
-	<span class="wpcf7-form-control-wrap your-email">
-		<input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email Address" />
-	</span>
-	<span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Message...">
-	</textarea>
-</span>
-<div align="right">
-	<input type="submit" value="Submit" class="wpcf7-form-control wpcf7-submit btn1" />
-</div>
-<!-- <div class="wpcf7-response-output wpcf7-display-none">
+                <p>
+                  <span class="wpcf7-form-control-wrap enquiry-type">
+                    <span class="wpcf7-form-control wpcf7-radio enquiry-type">
+                      <span class="wpcf7-list-item first">
+                        <label>
+                          <input
+                            type="radio"
+                            name="enquiry-type"
+                            value="General Enquiry"
+                            checked="checked"
+                          />
+                          &nbsp;
+                          <span class="wpcf7-list-item-label"
+                            >General Enquiry</span
+                          >
+                        </label>
+                      </span>
+                      <span class="wpcf7-list-item">
+                        <label>
+                          <input
+                            type="radio"
+                            name="enquiry-type"
+                            value="Request Call Back"
+                          />
+                          &nbsp;
+                          <span class="wpcf7-list-item-label"
+                            >Request Call Back</span
+                          >
+                        </label>
+                      </span>
+                      <span class="wpcf7-list-item last">
+                        <label>
+                          <input
+                            type="radio"
+                            name="enquiry-type"
+                            value="Request Quotation"
+                          />
+                          &nbsp;
+                          <span class="wpcf7-list-item-label"
+                            >Request Quotation</span
+                          >
+                        </label>
+                      </span>
+                    </span>
+                  </span>
+                  <span class="wpcf7-form-control-wrap your-name">
+                    <input
+                      type="text"
+                      name="your-name"
+                      value=""
+                      size="40"
+                      class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
+                      aria-required="true"
+                      aria-invalid="false"
+                      placeholder="Name"
+                    />
+                  </span>
+                  <span class="wpcf7-form-control-wrap phone">
+                    <input
+                      type="tel"
+                      name="phone"
+                      value=""
+                      size="40"
+                      class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel"
+                      aria-required="true"
+                      aria-invalid="false"
+                      placeholder="Contact Number"
+                    />
+                  </span>
+                  <span class="wpcf7-form-control-wrap your-email">
+                    <input
+                      type="email"
+                      name="your-email"
+                      value=""
+                      size="40"
+                      class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
+                      aria-required="true"
+                      aria-invalid="false"
+                      placeholder="Email Address"
+                    />
+                  </span>
+                  <span class="wpcf7-form-control-wrap your-message">
+                    <textarea
+                      name="your-message"
+                      cols="40"
+                      rows="10"
+                      class="wpcf7-form-control wpcf7-textarea"
+                      aria-invalid="false"
+                      placeholder="Message..."
+                    >
+                    </textarea>
+                  </span>
+                </p>
+
+                <div align="right">
+                  <input
+                    type="submit"
+                    value="Submit"
+                    class="wpcf7-form-control wpcf7-submit btn1"
+                  />
+                </div>
+                <!-- <div class="wpcf7-response-output wpcf7-display-none">
 </div> -->
-</form>
-</div>
-</div>
-</div>
-</div>
-<div id="main-content"><section id="company-overview">
-	<div class="container">
-		<article>
-		<h2 class="main-heading">Company Overview</h2>
-		<div class="col-sm-12">
-		<div class="col-sm-4"><p>With bespoke Interior Design and Fit-out solutions, Chase Interiors provides services across residential and commercial properties by creating new concepts for interiors and exteriors that are well planned and well designed.</p></div>
-<div class="col-sm-4"><p>At Chase Interiors, the importance of quality for long-term comfort and convenience is recognized and prioritized. With experience across industries – Residential, Corporate, Retail & F&B – our services are specialized to deliver complete design, fit-out and refurbishment of units with supply and installation of furniture.</p></div>
-<div class="col-sm-4"><p>Our keen focus on customer satisfaction allows us to take a partnership approach when dealing with clients. Trendy interiors, realistic budgets and timelines with attention to detail motivate us to deliver results that exceed expectations.</p>
-<p>Our well-rounded and experienced team of professionals delivers quality based on a holistic design formula that ensures results from the moment we step in.
-</p></div>		</div>
-		</article>
-	</div>
-</section>
-<section id="our-philosophy" class="bg-yellow">
-	<div class="container">
-		<article>
-		<h2 class="main-heading">Our philosophy</h2>
-		<div class="col-sm-12">
-		<div class="col-sm-4 mission"><img src="wp-content/uploads/2015/05/camp.png" alt="" />
-<h3>Mission</h3>
-Creating long-term relationships and lasting spaces.
-
-</div>
-<div class="col-sm-4 vision"><img src="wp-content/uploads/2015/05/glasses.png" alt="" />
-<h3>Vision</h3>
-Employing new and competitive global technologies to provide innovative services.
-
-</div>
-<div class="col-sm-4 value"><img src="wp-content/uploads/2015/05/thumb.png" alt="" />
-<h3>Value</h3>
-Our values guide our actions and our goals everyday, so we make a difference with high personal and professional standards we set for ourselves.
-
-</div>		</div>
-		</article>
-	</div>
-</section>
-<!-- <section id="our-organization">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="main-content">
+        <section id="company-overview">
+          <div class="container">
+            <article>
+              <h2 class="main-heading">Company Overview</h2>
+              <div class="col-sm-12">
+                <div class="col-sm-4">
+                  <p>
+                    With bespoke Interior Design and Fit-out solutions, Chase
+                    Interiors provides services across residential and
+                    commercial properties by creating new concepts for interiors
+                    and exteriors that are well planned and well designed.
+                  </p>
+                </div>
+                <div class="col-sm-4">
+                  <p>
+                    At Chase Interiors, the importance of quality for long-term
+                    comfort and convenience is recognized and prioritized. With
+                    experience across industries – Residential, Corporate,
+                    Retail & F&B – our services are specialized to deliver
+                    complete design, fit-out and refurbishment of units with
+                    supply and installation of furniture.
+                  </p>
+                </div>
+                <div class="col-sm-4">
+                  <p>
+                    Our keen focus on customer satisfaction allows us to take a
+                    partnership approach when dealing with clients. Trendy
+                    interiors, realistic budgets and timelines with attention to
+                    detail motivate us to deliver results that exceed
+                    expectations.
+                  </p>
+                  <p>
+                    Our well-rounded and experienced team of professionals
+                    delivers quality based on a holistic design formula that
+                    ensures results from the moment we step in.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section id="our-philosophy" class="bg-yellow">
+          <div class="container">
+            <article>
+              <h2 class="main-heading">Our philosophy</h2>
+              <div class="col-sm-12">
+                <div class="col-sm-4 mission">
+                  <img src="wp-content/uploads/2015/05/camp.png" alt="" />
+                  <h3>Mission</h3>
+                  Creating long-term relationships and lasting spaces.
+                </div>
+                <div class="col-sm-4 vision">
+                  <img src="wp-content/uploads/2015/05/glasses.png" alt="" />
+                  <h3>Vision</h3>
+                  Employing new and competitive global technologies to provide
+                  innovative services.
+                </div>
+                <div class="col-sm-4 value">
+                  <img src="wp-content/uploads/2015/05/thumb.png" alt="" />
+                  <h3>Value</h3>
+                  Our values guide our actions and our goals everyday, so we
+                  make a difference with high personal and professional
+                  standards we set for ourselves.
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <!-- <section id="our-organization">
 	<div class="container">
 		<article>
 		<h2 class="main-heading">OUR ORGANIZATION</h2>
@@ -425,7 +1391,7 @@ Our values guide our actions and our goals everyday, so we make a difference wit
 		</article>
 	</div>
 	</section> -->
-<!-- <section id="our-group">
+        <!-- <section id="our-group">
 	<div class="container">
 		<article>
 		<h2 class="main-heading">OUR GROUP</h2>
@@ -437,69 +1403,387 @@ Our values guide our actions and our goals everyday, so we make a difference wit
 		</article>
 	</div>
 </section> -->
-</div><!-- close .main-content -->
-<footer id="colophon" class="site-footer" role="contentinfo">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-8">
-				<div class="site-info">
-         &copy; 2023 Chase-Interiors. All Rights Reserved.        </div><!-- close .site-info -->
-			</div>
-			<div class="col-xs-4 text-right">
-				<ul>
-					<li><a target="_blank" href="https://www.facebook.com/profile.php?id=100089838798484"><i class="fa fa-facebook"></i></a></li>
+      </div>
+      <!-- close .main-content -->
+      <footer id="colophon" class="site-footer" role="contentinfo">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-8">
+              <div class="site-info">
+                &copy; 2023 Chase-Interiors. All Rights Reserved.
+              </div>
+              <!-- close .site-info -->
+            </div>
+            <div class="col-xs-4 text-right">
+              <ul>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/profile.php?id=100089838798484"
+                    ><i class="fa fa-facebook"></i
+                  ></a>
+                </li>
 
-					<li><a target="_blank" href="https://instagram.com/chaseplusinteriors?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram"></i></a></li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://instagram.com/chaseplusinteriors?igshid=YmMyMTA2M2Y="
+                    ><i class="fa fa-instagram"></i
+                  ></a>
+                </li>
 
-					<li><a  target="_blank" href="https://www.linkedin.com/company/chaseplusinterior/"><i class="fa fa-linkedin"></i></a></li>
-				</ul>
-			</div>
-		</div>
-	</div><!-- close .container -->
-</footer><!-- close #colophon -->
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/company/chaseplusinterior/"
+                    ><i class="fa fa-linkedin"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- close .container -->
+      </footer>
+      <!-- close #colophon -->
 
-<script type="text/javascript" src="../www.35wp.org/jquery.html"></script><div class="revsliderstyles"><style type="text/css"></style>
-</div><script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/js/jquery.form.mind03d.js?ver=3.51.0-2014.06.20'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var _wpcf7 = {"loaderUrl":"http:\/\/chase-interiors.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ..."};
-/* ]]> */
-</script>
-<script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/js/scripts5b31.js?ver=4.3.1'></script>
-<script type='text/javascript' src='wp-content/plugins/page-scroll-to-id/js/jquery.malihu.PageScroll2idaff7.js?ver=1.6.0'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var mPS2id_params = {"instances":{"mPS2id_instance_0":{"selector":{"value":"a[rel='m_PageScroll2id']","values":null,"id":"page_scroll_to_id_0_selector","field_type":"text","label":"Selector(s)","checkbox_label":null,"radio_labels":null,"field_info":null,"description":"The link(s) that will scroll the page when clicked. Defaults to all links with <code>m_PageScroll2id<\/code> rel attribute value","wrapper":null},"scrollSpeed":{"value":1300,"values":null,"id":"page_scroll_to_id_0_scrollSpeed","field_type":"text-integer","label":"Scroll animation speed","checkbox_label":null,"radio_labels":null,"field_info":"milliseconds","description":"Scroll animation speed in milliseconds (1000 milliseconds equals 1 second)","wrapper":null},"autoScrollSpeed":{"value":"true","values":null,"id":"page_scroll_to_id_0_autoScrollSpeed","field_type":"checkbox","label":"","checkbox_label":"Auto-adjust animation speed","radio_labels":null,"field_info":null,"description":"Auto-adjust animation speed according to target element position and window scroll","wrapper":"fieldset"},"scrollEasing":{"value":"easeInOutExpo","values":"linear,swing,easeInQuad,easeOutQuad,easeInOutQuad,easeInCubic,easeOutCubic,easeInOutCubic,easeInQuart,easeOutQuart,easeInOutQuart,easeInQuint,easeOutQuint,easeInOutQuint,easeInExpo,easeOutExpo,easeInOutExpo,easeInSine,easeOutSine,easeInOutSine,easeInCirc,easeOutCirc,easeInOutCirc,easeInElastic,easeOutElastic,easeInOutElastic,easeInBack,easeOutBack,easeInOutBack,easeInBounce,easeOutBounce,easeInOutBounce","id":"page_scroll_to_id_0_scrollEasing","field_type":"select","label":"Scroll animation easing","checkbox_label":null,"radio_labels":null,"field_info":null,"description":"Animation easing when page is idle","wrapper":null},"scrollingEasing":{"value":"easeInOutCirc","values":"linear,swing,easeInQuad,easeOutQuad,easeInOutQuad,easeInCubic,easeOutCubic,easeInOutCubic,easeInQuart,easeOutQuart,easeInOutQuart,easeInQuint,easeOutQuint,easeInOutQuint,easeInExpo,easeOutExpo,easeInOutExpo,easeInSine,easeOutSine,easeInOutSine,easeInCirc,easeOutCirc,easeInOutCirc,easeInElastic,easeOutElastic,easeInOutElastic,easeInBack,easeOutBack,easeInOutBack,easeInBounce,easeOutBounce,easeInOutBounce","id":"page_scroll_to_id_0_scrollingEasing","field_type":"select","label":"","checkbox_label":null,"radio_labels":null,"field_info":null,"description":"Animation easing while page is animating","wrapper":null},"pageEndSmoothScroll":{"value":"true","values":null,"id":"page_scroll_to_id_0_pageEndSmoothScroll","field_type":"checkbox","label":"Scroll-to position","checkbox_label":"Auto-adjust","radio_labels":null,"field_info":null,"description":"Auto-adjust the scroll-to position so it does not exceed document length","wrapper":"fieldset"},"layout":{"value":"vertical","values":"vertical,horizontal,auto","id":"page_scroll_to_id_0_layout","field_type":"radio","label":"Page layout","checkbox_label":null,"radio_labels":"vertical|horizontal|auto","field_info":null,"description":"Restrict page scrolling to top-bottom (vertical) or left-right (horizontal) accordingly. For both vertical and horizontal scrolling select <code>auto<\/code>","wrapper":"fieldset"},"offset":{"value":"86","values":null,"id":"page_scroll_to_id_0_offset","field_type":"text","label":"Offset","checkbox_label":null,"radio_labels":null,"field_info":"pixels","description":"Offset scroll-to position by x amount of pixels (positive or negative) or by selector (e.g. <code>#navigation-menu<\/code>)","wrapper":null},"highlightSelector":{"value":"","values":null,"id":"page_scroll_to_id_0_highlightSelector","field_type":"text","label":"Highlight selector(s)","checkbox_label":null,"radio_labels":null,"field_info":null,"description":"The link(s) that are highlighted. Leave empty to highlight all or enter your specific selector(s)","wrapper":null},"clickedClass":{"value":"mPS2id-clicked","values":null,"id":"page_scroll_to_id_0_clickedClass","field_type":"text","label":"Classes","checkbox_label":null,"radio_labels":null,"field_info":"class name","description":"Class of the clicked link","wrapper":null},"targetClass":{"value":"mPS2id-target","values":null,"id":"page_scroll_to_id_0_targetClass","field_type":"text","label":"","checkbox_label":null,"radio_labels":null,"field_info":"class name","description":"Class of the (current) target element. First (current) target element class suffix: <code>-first<\/code> (e.g. <code>.mPS2id-target-first<\/code>). Last (current) target element class suffix: <code>-last<\/code> (e.g. <code>.mPS2id-target-last<\/code>)","wrapper":null},"highlightClass":{"value":"mPS2id-highlight","values":null,"id":"page_scroll_to_id_0_highlightClass","field_type":"text","label":"","checkbox_label":null,"radio_labels":null,"field_info":"class name","description":"Class of the (current) highlighted element. First (current) highlighted element class suffix: <code>-first<\/code> (e.g. <code>.mPS2id-highlight-first<\/code>). Last (current) highlighted element class suffix: <code>-last<\/code> (e.g. <code>.mPS2id-highlight-last<\/code>)","wrapper":null},"forceSingleHighlight":{"value":"false","values":null,"id":"page_scroll_to_id_0_forceSingleHighlight","field_type":"checkbox","label":"","checkbox_label":"Force single highlight","radio_labels":null,"field_info":null,"description":"Allow only one highlighted element at a time","wrapper":"fieldset"},"keepHighlightUntilNext":{"value":"false","values":null,"id":"page_scroll_to_id_0_keepHighlightUntilNext","field_type":"checkbox","label":"","checkbox_label":"Keep highlight until next","radio_labels":null,"field_info":null,"description":"Keep the current element highlighted until the next one comes into view","wrapper":"fieldset"},"highlightByNextTarget":{"value":"false","values":null,"id":"page_scroll_to_id_0_highlightByNextTarget","field_type":"checkbox","label":"","checkbox_label":"Highlight by next target","radio_labels":null,"field_info":null,"description":"Set targets length according to their next adjacent target position (useful when target elements have zero dimensions)","wrapper":"fieldset"},"scrollToHash":{"value":"false","values":null,"id":"page_scroll_to_id_0_scrollToHash","field_type":"checkbox","label":"Scroll to location hash","checkbox_label":"Enable","radio_labels":null,"field_info":null,"description":"Scroll to target id (e.g. <code>&lt;div id=\"id\" \/&gt;<\/code>) based on location hash (e.g. <code>mysite.com\/mypage#id<\/code>) on page load","wrapper":"fieldset"},"scrollToHashForAll":{"value":"false","values":null,"id":"page_scroll_to_id_0_scrollToHashForAll","field_type":"checkbox","label":"","checkbox_label":"Enable for all targets (even for elements that are not handled by the plugin)","radio_labels":null,"field_info":null,"description":null,"wrapper":"fieldset"},"scrollToHashDelay":{"value":0,"values":null,"id":"page_scroll_to_id_0_scrollToHashDelay","field_type":"text-integer","label":"","checkbox_label":null,"radio_labels":null,"field_info":"Delay (milliseconds)","description":"Scroll to location hash animation delay in milliseconds (1000 milliseconds equals 1 second)","wrapper":null},"disablePluginBelow":{"value":"767","values":null,"id":"page_scroll_to_id_0_disablePluginBelow","field_type":"text","label":"Disable plugin below","checkbox_label":null,"radio_labels":null,"field_info":"screen-size","description":"Set the width,height screen-size (in pixels), below which the plugin will be disabled (e.g. <code>1024<\/code>, <code>1024,600<\/code>)","wrapper":null}}},"total_instances":"1","shortcode_class":"_ps2id"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='wp-content/plugins/page-scroll-to-id/js/jquery.malihu.PageScroll2id-initaff7.js?ver=1.6.0'></script>
-<script type='text/javascript' src='wp-content/themes/chaseinteriors/includes/js/jquery.animsition.min909d.js?ver=1477744323'></script>
-<script type='text/javascript' src='wp-content/themes/chaseinteriors/includes/js/skip-link-focus-fix08e0.js?ver=20130115'></script>
-<script type='text/javascript' src='wp-content/themes/chaseinteriors/includes/js/SmoothScroll909d.js?ver=1477744323'></script>
-<script type='text/javascript' src='wp-content/themes/chaseinteriors/includes/js/scripts909d.js?ver=1477744323'></script>
-<script type='text/javascript' src='wp-includes/js/wp-embed.min4235.js?ver=4.4.5'></script>
-</div>
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"fbe155f68a","applicationID":"11922383","transactionName":"ZQYDMkYFXxFWWkMPCVxMIAVADV4MGFFYCwNCAgYD","queueTime":0,"applicationTime":435,"atts":"SUEARA4fTB8=","errorBeacon":"bam.nr-data.net","agent":""}</script>
-<script>
-	$("#submit-form").submit((e)=>{
-		e.preventDefault()
-		$.ajax({
-			url:"https://script.google.com/macros/s/AKfycbyzo3n0CuC7zozsvrVyUZgHla8y1TcoQh6z7hya365tvkXAUT3WyGjnoag1JVSR69-sRg/exec",
-			data:$("#submit-form").serialize(),
-			method:"post",
-			success:function (response){
-				alert("Form submitted successfully")
-				window.location.reload()
-				//window.location.href="https://google.com"
-			},
-			error:function (err){
-				alert("Something Error")
-
-			}
-		})
-	})
-</script>
-
-</body>
-
+      <script type="text/javascript" src="../www.35wp.org/jquery.html"></script>
+      <div class="revsliderstyles"><style type="text/css"></style></div>
+      <script
+        type="text/javascript"
+        src="wp-content/plugins/contact-form-7/includes/js/jquery.form.mind03d.js?ver=3.51.0-2014.06.20"
+      ></script>
+      <script type="text/javascript">
+        /* <![CDATA[ */
+        var _wpcf7 = {
+          loaderUrl:
+            "http:\/\/chase-interiors.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif",
+          recaptchaEmpty: "Please verify that you are not a robot.",
+          sending: "Sending ...",
+        };
+        /* ]]> */
+      </script>
+      <script
+        type="text/javascript"
+        src="wp-content/plugins/contact-form-7/includes/js/scripts5b31.js?ver=4.3.1"
+      ></script>
+      <script
+        type="text/javascript"
+        src="wp-content/plugins/page-scroll-to-id/js/jquery.malihu.PageScroll2idaff7.js?ver=1.6.0"
+      ></script>
+      <script type="text/javascript">
+        /* <![CDATA[ */
+        var mPS2id_params = {
+          instances: {
+            mPS2id_instance_0: {
+              selector: {
+                value: "a[rel='m_PageScroll2id']",
+                values: null,
+                id: "page_scroll_to_id_0_selector",
+                field_type: "text",
+                label: "Selector(s)",
+                checkbox_label: null,
+                radio_labels: null,
+                field_info: null,
+                description:
+                  "The link(s) that will scroll the page when clicked. Defaults to all links with <code>m_PageScroll2id<\/code> rel attribute value",
+                wrapper: null,
+              },
+              scrollSpeed: {
+                value: 1300,
+                values: null,
+                id: "page_scroll_to_id_0_scrollSpeed",
+                field_type: "text-integer",
+                label: "Scroll animation speed",
+                checkbox_label: null,
+                radio_labels: null,
+                field_info: "milliseconds",
+                description:
+                  "Scroll animation speed in milliseconds (1000 milliseconds equals 1 second)",
+                wrapper: null,
+              },
+              autoScrollSpeed: {
+                value: "true",
+                values: null,
+                id: "page_scroll_to_id_0_autoScrollSpeed",
+                field_type: "checkbox",
+                label: "",
+                checkbox_label: "Auto-adjust animation speed",
+                radio_labels: null,
+                field_info: null,
+                description:
+                  "Auto-adjust animation speed according to target element position and window scroll",
+                wrapper: "fieldset",
+              },
+              scrollEasing: {
+                value: "easeInOutExpo",
+                values:
+                  "linear,swing,easeInQuad,easeOutQuad,easeInOutQuad,easeInCubic,easeOutCubic,easeInOutCubic,easeInQuart,easeOutQuart,easeInOutQuart,easeInQuint,easeOutQuint,easeInOutQuint,easeInExpo,easeOutExpo,easeInOutExpo,easeInSine,easeOutSine,easeInOutSine,easeInCirc,easeOutCirc,easeInOutCirc,easeInElastic,easeOutElastic,easeInOutElastic,easeInBack,easeOutBack,easeInOutBack,easeInBounce,easeOutBounce,easeInOutBounce",
+                id: "page_scroll_to_id_0_scrollEasing",
+                field_type: "select",
+                label: "Scroll animation easing",
+                checkbox_label: null,
+                radio_labels: null,
+                field_info: null,
+                description: "Animation easing when page is idle",
+                wrapper: null,
+              },
+              scrollingEasing: {
+                value: "easeInOutCirc",
+                values:
+                  "linear,swing,easeInQuad,easeOutQuad,easeInOutQuad,easeInCubic,easeOutCubic,easeInOutCubic,easeInQuart,easeOutQuart,easeInOutQuart,easeInQuint,easeOutQuint,easeInOutQuint,easeInExpo,easeOutExpo,easeInOutExpo,easeInSine,easeOutSine,easeInOutSine,easeInCirc,easeOutCirc,easeInOutCirc,easeInElastic,easeOutElastic,easeInOutElastic,easeInBack,easeOutBack,easeInOutBack,easeInBounce,easeOutBounce,easeInOutBounce",
+                id: "page_scroll_to_id_0_scrollingEasing",
+                field_type: "select",
+                label: "",
+                checkbox_label: null,
+                radio_labels: null,
+                field_info: null,
+                description: "Animation easing while page is animating",
+                wrapper: null,
+              },
+              pageEndSmoothScroll: {
+                value: "true",
+                values: null,
+                id: "page_scroll_to_id_0_pageEndSmoothScroll",
+                field_type: "checkbox",
+                label: "Scroll-to position",
+                checkbox_label: "Auto-adjust",
+                radio_labels: null,
+                field_info: null,
+                description:
+                  "Auto-adjust the scroll-to position so it does not exceed document length",
+                wrapper: "fieldset",
+              },
+              layout: {
+                value: "vertical",
+                values: "vertical,horizontal,auto",
+                id: "page_scroll_to_id_0_layout",
+                field_type: "radio",
+                label: "Page layout",
+                checkbox_label: null,
+                radio_labels: "vertical|horizontal|auto",
+                field_info: null,
+                description:
+                  "Restrict page scrolling to top-bottom (vertical) or left-right (horizontal) accordingly. For both vertical and horizontal scrolling select <code>auto<\/code>",
+                wrapper: "fieldset",
+              },
+              offset: {
+                value: "86",
+                values: null,
+                id: "page_scroll_to_id_0_offset",
+                field_type: "text",
+                label: "Offset",
+                checkbox_label: null,
+                radio_labels: null,
+                field_info: "pixels",
+                description:
+                  "Offset scroll-to position by x amount of pixels (positive or negative) or by selector (e.g. <code>#navigation-menu<\/code>)",
+                wrapper: null,
+              },
+              highlightSelector: {
+                value: "",
+                values: null,
+                id: "page_scroll_to_id_0_highlightSelector",
+                field_type: "text",
+                label: "Highlight selector(s)",
+                checkbox_label: null,
+                radio_labels: null,
+                field_info: null,
+                description:
+                  "The link(s) that are highlighted. Leave empty to highlight all or enter your specific selector(s)",
+                wrapper: null,
+              },
+              clickedClass: {
+                value: "mPS2id-clicked",
+                values: null,
+                id: "page_scroll_to_id_0_clickedClass",
+                field_type: "text",
+                label: "Classes",
+                checkbox_label: null,
+                radio_labels: null,
+                field_info: "class name",
+                description: "Class of the clicked link",
+                wrapper: null,
+              },
+              targetClass: {
+                value: "mPS2id-target",
+                values: null,
+                id: "page_scroll_to_id_0_targetClass",
+                field_type: "text",
+                label: "",
+                checkbox_label: null,
+                radio_labels: null,
+                field_info: "class name",
+                description:
+                  "Class of the (current) target element. First (current) target element class suffix: <code>-first<\/code> (e.g. <code>.mPS2id-target-first<\/code>). Last (current) target element class suffix: <code>-last<\/code> (e.g. <code>.mPS2id-target-last<\/code>)",
+                wrapper: null,
+              },
+              highlightClass: {
+                value: "mPS2id-highlight",
+                values: null,
+                id: "page_scroll_to_id_0_highlightClass",
+                field_type: "text",
+                label: "",
+                checkbox_label: null,
+                radio_labels: null,
+                field_info: "class name",
+                description:
+                  "Class of the (current) highlighted element. First (current) highlighted element class suffix: <code>-first<\/code> (e.g. <code>.mPS2id-highlight-first<\/code>). Last (current) highlighted element class suffix: <code>-last<\/code> (e.g. <code>.mPS2id-highlight-last<\/code>)",
+                wrapper: null,
+              },
+              forceSingleHighlight: {
+                value: "false",
+                values: null,
+                id: "page_scroll_to_id_0_forceSingleHighlight",
+                field_type: "checkbox",
+                label: "",
+                checkbox_label: "Force single highlight",
+                radio_labels: null,
+                field_info: null,
+                description: "Allow only one highlighted element at a time",
+                wrapper: "fieldset",
+              },
+              keepHighlightUntilNext: {
+                value: "false",
+                values: null,
+                id: "page_scroll_to_id_0_keepHighlightUntilNext",
+                field_type: "checkbox",
+                label: "",
+                checkbox_label: "Keep highlight until next",
+                radio_labels: null,
+                field_info: null,
+                description:
+                  "Keep the current element highlighted until the next one comes into view",
+                wrapper: "fieldset",
+              },
+              highlightByNextTarget: {
+                value: "false",
+                values: null,
+                id: "page_scroll_to_id_0_highlightByNextTarget",
+                field_type: "checkbox",
+                label: "",
+                checkbox_label: "Highlight by next target",
+                radio_labels: null,
+                field_info: null,
+                description:
+                  "Set targets length according to their next adjacent target position (useful when target elements have zero dimensions)",
+                wrapper: "fieldset",
+              },
+              scrollToHash: {
+                value: "false",
+                values: null,
+                id: "page_scroll_to_id_0_scrollToHash",
+                field_type: "checkbox",
+                label: "Scroll to location hash",
+                checkbox_label: "Enable",
+                radio_labels: null,
+                field_info: null,
+                description:
+                  'Scroll to target id (e.g. <code>&lt;div id="id" \/&gt;<\/code>) based on location hash (e.g. <code>mysite.com\/mypage#id<\/code>) on page load',
+                wrapper: "fieldset",
+              },
+              scrollToHashForAll: {
+                value: "false",
+                values: null,
+                id: "page_scroll_to_id_0_scrollToHashForAll",
+                field_type: "checkbox",
+                label: "",
+                checkbox_label:
+                  "Enable for all targets (even for elements that are not handled by the plugin)",
+                radio_labels: null,
+                field_info: null,
+                description: null,
+                wrapper: "fieldset",
+              },
+              scrollToHashDelay: {
+                value: 0,
+                values: null,
+                id: "page_scroll_to_id_0_scrollToHashDelay",
+                field_type: "text-integer",
+                label: "",
+                checkbox_label: null,
+                radio_labels: null,
+                field_info: "Delay (milliseconds)",
+                description:
+                  "Scroll to location hash animation delay in milliseconds (1000 milliseconds equals 1 second)",
+                wrapper: null,
+              },
+              disablePluginBelow: {
+                value: "767",
+                values: null,
+                id: "page_scroll_to_id_0_disablePluginBelow",
+                field_type: "text",
+                label: "Disable plugin below",
+                checkbox_label: null,
+                radio_labels: null,
+                field_info: "screen-size",
+                description:
+                  "Set the width,height screen-size (in pixels), below which the plugin will be disabled (e.g. <code>1024<\/code>, <code>1024,600<\/code>)",
+                wrapper: null,
+              },
+            },
+          },
+          total_instances: "1",
+          shortcode_class: "_ps2id",
+        };
+        /* ]]> */
+      </script>
+      <script
+        type="text/javascript"
+        src="wp-content/plugins/page-scroll-to-id/js/jquery.malihu.PageScroll2id-initaff7.js?ver=1.6.0"
+      ></script>
+      <script
+        type="text/javascript"
+        src="wp-content/themes/chaseinteriors/includes/js/jquery.animsition.min909d.js?ver=1477744323"
+      ></script>
+      <script
+        type="text/javascript"
+        src="wp-content/themes/chaseinteriors/includes/js/skip-link-focus-fix08e0.js?ver=20130115"
+      ></script>
+      <script
+        type="text/javascript"
+        src="wp-content/themes/chaseinteriors/includes/js/SmoothScroll909d.js?ver=1477744323"
+      ></script>
+      <script
+        type="text/javascript"
+        src="wp-content/themes/chaseinteriors/includes/js/scripts909d.js?ver=1477744323"
+      ></script>
+      <script
+        type="text/javascript"
+        src="wp-includes/js/wp-embed.min4235.js?ver=4.4.5"
+      ></script>
+    </div>
+    <script type="text/javascript">
+      window.NREUM || (NREUM = {});
+      NREUM.info = {
+        beacon: "bam.nr-data.net",
+        licenseKey: "fbe155f68a",
+        applicationID: "11922383",
+        transactionName: "ZQYDMkYFXxFWWkMPCVxMIAVADV4MGFFYCwNCAgYD",
+        queueTime: 0,
+        applicationTime: 435,
+        atts: "SUEARA4fTB8=",
+        errorBeacon: "bam.nr-data.net",
+        agent: "",
+      };
+    </script>
+    <script>
+      $("#submit-form").submit((e) => {
+        e.preventDefault();
+        $.ajax({
+          url: "https://script.google.com/macros/s/AKfycbyzo3n0CuC7zozsvrVyUZgHla8y1TcoQh6z7hya365tvkXAUT3WyGjnoag1JVSR69-sRg/exec",
+          data: $("#submit-form").serialize(),
+          method: "post",
+          success: function (response) {
+            alert("Form submitted successfully");
+            window.location.reload();
+            //window.location.href="https://google.com"
+          },
+          error: function (err) {
+            alert("Something Error");
+          },
+        });
+      });
+    </script>
+  </body>
 </html>
